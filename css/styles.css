@@ -400,41 +400,43 @@ textarea {
 }
 
 .formula-card {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 12px;
-  margin-top: 4px;
+  margin-top: 8px;
 }
 
-.formula,
 .parameters {
   border-radius: 12px;
   background: #f4f8fd;
-}
-
-.formula {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 88px;
-  padding: 14px;
-  text-align: center;
-  font-family: Georgia, serif;
-  font-size: 0.96rem;
-}
-
-.parameters {
-  min-width: 125px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 13px;
-  font-size: 0.72rem;
+  padding: 15px 16px;
   color: #52617a;
+  font-size: 0.78rem;
 }
 
 .parameters strong {
+  display: block;
+  margin-bottom: 10px;
   color: var(--text);
+  font-size: 0.82rem;
+}
+
+.parameter-row {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+}
+
+.parameter-symbol {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #e8f2ff;
+  color: var(--primary);
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 /* Sections */
@@ -874,13 +876,6 @@ textarea {
     padding: 15px;
   }
 
-  .formula-card {
-    grid-template-columns: 1fr;
-  }
-
-  .parameters {
-    min-width: 0;
-  }
 
   .section {
     padding: 34px 0;
