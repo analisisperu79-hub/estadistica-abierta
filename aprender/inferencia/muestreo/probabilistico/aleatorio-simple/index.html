@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="../../../../../css/styles.css">
 <link rel="stylesheet" href="../../../../../css/ad-slots.css">
 <link rel="stylesheet" href="aleatorio-simple.css">
+<script src="../../../../../js/math.js"></script>
 </head>
 
 <body data-course="inferencia-estadistica" data-topic-id="muestreo-aleatorio-simple" data-course-total="12">
@@ -52,37 +53,87 @@
 <span class="eyebrow">Muestreo probabilístico</span>
 <h1>Muestreo aleatorio simple</h1>
 <p class="hero-subtitle">Selección de unidades con igual probabilidad</p>
-<p class="hero-text">El muestreo aleatorio simple (MAS) es un diseño probabilístico en el que cada muestra posible de tamaño <em>n</em> tiene la misma probabilidad de ser seleccionada. En un MAS sin reemplazo, cada unidad de una población de tamaño <em>N</em> tiene probabilidad de inclusión de primer orden igual a <strong>n/N</strong>.</p>
+<p class="hero-text">
+El muestreo aleatorio simple (MAS) es un diseño probabilístico en el que cada muestra posible de tamaño
+\(n\) tiene la misma probabilidad de ser seleccionada. En un MAS sin reemplazo, cada unidad de una población
+de tamaño \(N\) tiene probabilidad de inclusión de primer orden igual a \(n/N\).
+</p>
 </div>
+
 <div class="hero-diagram" aria-label="Población y muestra seleccionada aleatoriamente">
-<div class="population"><div class="people-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><strong>Población</strong><small>(N)</small></div>
+<div class="population">
+<div class="people-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<strong>Población</strong><small>\(N\)</small>
+</div>
 <div class="selection-arrow"><span>Selección<br>aleatoria</span><b>→</b></div>
-<div class="sample"><div class="sample-circle"><span></span><span></span><span></span><span></span></div><strong>Muestra</strong><small>(n)</small></div>
+<div class="sample">
+<div class="sample-circle"><span></span><span></span><span></span><span></span></div>
+<strong>Muestra</strong><small>\(n\)</small>
+</div>
 </div>
 </section>
 
 <section class="panel" id="que-es">
 <div class="section-heading"><span>1</span><h2>¿Qué es el muestreo aleatorio simple?</h2></div>
-<p>En un MAS se seleccionan <em>n</em> unidades de una población finita de tamaño <em>N</em> mediante un mecanismo aleatorio que asigna la misma probabilidad a cada muestra posible de tamaño <em>n</em>. Esta propiedad distingue al diseño de una selección informal “al azar”.</p>
-<div class="concept-note"><strong>Distinción importante</strong><p>En un MAS sin reemplazo, cada unidad tiene probabilidad de inclusión <strong>πᵢ = n/N</strong>. Esto no significa que cada selección sucesiva tenga probabilidad constante 1/N, porque las probabilidades condicionales cambian después de cada extracción.</p></div>
+<p>
+En un MAS se seleccionan \(n\) unidades de una población finita de tamaño \(N\) mediante un mecanismo
+aleatorio que asigna la misma probabilidad a cada muestra posible de tamaño \(n\).
+</p>
+<div class="concept-note">
+<strong>Distinción importante</strong>
+<p>
+En un MAS sin reemplazo, cada unidad tiene probabilidad de inclusión
+\[
+\pi_i=\frac{n}{N}.
+\]
+Esto no significa que cada extracción sucesiva tenga probabilidad constante \(1/N\), porque al no haber reemplazo
+las probabilidades condicionales cambian después de cada selección.
+</p>
+</div>
 </section>
 
 <section class="panel" id="seleccion">
 <div class="section-heading"><span>2</span><h2>Cómo se selecciona la muestra</h2></div>
 <div class="steps-grid">
-<article><span class="step-number">1</span><h3>Definir la población</h3><p>Identificar las N unidades elegibles y construir un marco muestral adecuado.</p><div class="step-visual">● ● ● ● ●<br>● ● ● ● ●</div></article>
-<article><span class="step-number green">2</span><h3>Asignar identificadores</h3><p>Numerar las unidades del marco desde 1 hasta N.</p><div class="formula-box">1, 2, 3, …, N</div></article>
-<article><span class="step-number amber">3</span><h3>Seleccionar n unidades</h3><p>Elegir aleatoriamente n unidades sin reemplazo usando números aleatorios o software.</p><div class="step-visual">● ○ ● ○ ○ ●</div></article>
-<article><span class="step-number purple">4</span><h3>Obtener la muestra</h3><p>Las unidades seleccionadas conforman la muestra sobre la que se realizará la estimación.</p><div class="sample-mini"><i></i><i></i><i></i></div></article>
+<article>
+<span class="step-number">1</span>
+<h3>Definir la población</h3>
+<p>Identificar las \(N\) unidades elegibles y construir un marco muestral adecuado.</p>
+<div class="step-visual">● ● ● ● ●<br>● ● ● ● ●</div>
+</article>
+
+<article>
+<span class="step-number green">2</span>
+<h3>Asignar identificadores</h3>
+<p>Numerar las unidades del marco desde \(1\) hasta \(N\).</p>
+<div class="formula-box">\[
+1,2,3,\ldots,N
+\]</div>
+</article>
+
+<article>
+<span class="step-number amber">3</span>
+<h3>Seleccionar \(n\) unidades</h3>
+<p>Elegir aleatoriamente \(n\) unidades sin reemplazo usando números aleatorios o software.</p>
+<div class="step-visual">● ○ ● ○ ○ ●</div>
+</article>
+
+<article>
+<span class="step-number purple">4</span>
+<h3>Obtener la muestra</h3>
+<p>Las unidades seleccionadas conforman la muestra sobre la que se realizará la estimación.</p>
+<div class="sample-mini"><i></i><i></i><i></i></div>
+</article>
 </div>
 </section>
 
 <div class="two-col">
+
 <section class="panel" id="propiedades">
 <div class="section-heading"><span>3</span><h2>Propiedades estadísticas</h2></div>
 <ul class="check-list">
 <li>Es un diseño probabilístico.</li>
-<li>Todas las muestras posibles de tamaño n son igualmente probables.</li>
+<li>Todas las muestras posibles de tamaño \(n\) son igualmente probables.</li>
 <li>La media muestral es insesgada para la media poblacional.</li>
 <li>La proporción muestral es insesgada para la proporción poblacional.</li>
 <li>Las varianzas de los estimadores pueden calcularse bajo el diseño.</li>
@@ -91,77 +142,174 @@
 
 <section class="panel" id="media">
 <div class="section-heading"><span>4</span><h2>Estimación de la media poblacional</h2></div>
-<p>El estimador natural de la media poblacional es la media muestral:</p>
-<div class="formula-box formula-large">ȳ = (1/n) Σ yᵢ</div>
-<p class="formula-caption">Para MAS sin reemplazo:</p>
-<div class="formula-box formula-large">V̂(ȳ) = (1 − f) s² / n</div>
-<div class="notation"><span><strong>f = n/N</strong> fracción de muestreo</span><span><strong>s²</strong> varianza muestral</span></div>
+<p>El estimador de la media poblacional es la media muestral:</p>
+<div class="formula-box formula-large">
+\[
+\bar{y}=\frac{1}{n}\sum_{i=1}^{n}y_i
+\]
+</div>
+
+<p class="formula-caption">Para MAS sin reemplazo, una estimación habitual de su varianza es:</p>
+<div class="formula-box formula-large">
+\[
+\widehat{\mathrm{Var}}(\bar y)=\left(1-\frac{n}{N}\right)\frac{s^2}{n}
+\]
+</div>
+
+<div class="notation">
+<span>\(f=\frac{n}{N}\): fracción de muestreo</span>
+<span>\(s^2\): varianza muestral</span>
+</div>
 </section>
+
 </div>
 
 <div class="two-col">
+
 <section class="panel" id="proporcion">
 <div class="section-heading"><span>5</span><h2>Estimación de la proporción poblacional</h2></div>
-<p>Si x unidades presentan una característica:</p>
-<div class="formula-box formula-large">p̂ = x / n</div>
-<p class="formula-caption">Para MAS sin reemplazo, una estimación habitual de la varianza es:</p>
-<div class="formula-box formula-large">V̂(p̂) = (1 − f) p̂(1 − p̂) / (n − 1)</div>
+<p>Si \(x\) unidades de la muestra presentan la característica de interés:</p>
+
+<div class="formula-box formula-large">
+\[
+\hat p=\frac{x}{n}
+\]
+</div>
+
+<p class="formula-caption">Para MAS sin reemplazo:</p>
+<div class="formula-box formula-large">
+\[
+\widehat{\mathrm{Var}}(\hat p)
+=
+(1-f)\frac{\hat p(1-\hat p)}{n-1}
+\]
+</div>
 </section>
 
 <section class="panel" id="ventajas">
 <div class="section-heading"><span>6</span><h2>Ventajas y limitaciones</h2></div>
 <div class="pros-cons">
-<div class="pros"><h3>✓ Ventajas</h3><ul><li>Fácil de entender y aplicar.</li><li>Estimadores y errores estándar conocidos.</li><li>No exige información auxiliar para seleccionar.</li><li>Sirve como referencia para otros diseños.</li></ul></div>
-<div class="cons"><h3>✕ Limitaciones</h3><ul><li>Requiere un marco muestral completo.</li><li>Puede ser costoso en poblaciones dispersas.</li><li>Puede ser menos eficiente que el estratificado.</li><li>No corrige no respuesta ni errores de medición.</li></ul></div>
-</div>
-</section>
+<div class="pros">
+<h3>✓ Ventajas</h3>
+<ul>
+<li>Fácil de entender y aplicar.</li>
+<li>Estimadores y errores estándar conocidos.</li>
+<li>No exige información auxiliar para seleccionar.</li>
+<li>Sirve como referencia para otros diseños.</li>
+</ul>
 </div>
 
-<div class="ea-ad-slot ea-ad-slot--leaderboard" data-ad-position="lesson-middle" data-ad-format="horizontal" aria-hidden="true"></div>
+<div class="cons">
+<h3>✕ Limitaciones</h3>
+<ul>
+<li>Requiere un marco muestral completo.</li>
+<li>Puede ser costoso en poblaciones dispersas.</li>
+<li>Puede ser menos eficiente que el estratificado.</li>
+<li>No corrige no respuesta ni errores de medición.</li>
+</ul>
+</div>
+</div>
+</section>
+
+</div>
+
+<div class="ea-ad-slot ea-ad-slot--leaderboard"
+data-ad-position="lesson-middle"
+data-ad-format="horizontal"
+aria-hidden="true"></div>
 
 <section class="panel" id="ejemplo">
 <div class="section-heading"><span>7</span><h2>Ejemplo aplicado</h2></div>
+
 <div class="worked-example">
 <div>
 <span class="example-label">Universidad</span>
 <h3>Seleccionar 100 estudiantes de una población de 2 000</h3>
-<p>Una universidad tiene un padrón completo de 2 000 estudiantes y desea estimar el gasto promedio mensual en transporte. Si utiliza MAS sin reemplazo y selecciona 100 estudiantes:</p>
-<div class="formula-box">πᵢ = n/N = 100/2000 = 0.05</div>
-<p>Cada estudiante tiene una probabilidad de inclusión de 5%. Después de obtener las respuestas, la media muestral se utiliza para estimar el promedio poblacional.</p>
+<p>
+Una universidad tiene un padrón completo de \(N=2000\) estudiantes y selecciona
+\(n=100\) mediante MAS sin reemplazo.
+</p>
+
+<div class="formula-box">
+\[
+\pi_i=\frac{n}{N}
+=\frac{100}{2000}
+=0.05
+\]
 </div>
-<div class="example-side"><strong>¿Por qué MAS aquí?</strong><ul><li>Existe un marco completo.</li><li>Las unidades son identificables.</li><li>La población es manejable.</li><li>No es necesario garantizar representación por facultad.</li></ul></div>
+
+<p>
+Cada estudiante tiene una probabilidad de inclusión de 5%. Después de recopilar la información,
+la media muestral puede utilizarse para estimar la media poblacional.
+</p>
+</div>
+
+<div class="example-side">
+<strong>¿Por qué MAS aquí?</strong>
+<ul>
+<li>Existe un marco completo.</li>
+<li>Las unidades son identificables.</li>
+<li>La población es manejable.</li>
+<li>No es necesario garantizar representación por facultad.</li>
+</ul>
+</div>
 </div>
 </section>
 
 <section class="panel" id="cuando-usar">
 <div class="section-heading"><span>8</span><h2>¿Cuándo conviene usarlo?</h2></div>
 <div class="decision-grid">
-<article class="good"><h3>Conviene cuando</h3><ul><li>Dispones de un marco muestral completo.</li><li>La población no está excesivamente dispersa.</li><li>No necesitas asegurar tamaños mínimos por subgrupo.</li><li>Quieres un diseño simple y transparente.</li></ul></article>
-<article class="bad"><h3>Considera otro diseño cuando</h3><ul><li>Existen estratos que deben estar representados.</li><li>La población está muy dispersa geográficamente.</li><li>El costo de contactar unidades individuales es alto.</li><li>El marco muestral es incompleto o inexistente.</li></ul></article>
+<article class="good">
+<h3>Conviene cuando</h3>
+<ul>
+<li>Dispones de un marco muestral completo.</li>
+<li>La población no está excesivamente dispersa.</li>
+<li>No necesitas asegurar tamaños mínimos por subgrupo.</li>
+<li>Quieres un diseño simple y transparente.</li>
+</ul>
+</article>
+
+<article class="bad">
+<h3>Considera otro diseño cuando</h3>
+<ul>
+<li>Existen estratos que deben estar representados.</li>
+<li>La población está muy dispersa geográficamente.</li>
+<li>El costo de contactar unidades individuales es alto.</li>
+<li>El marco muestral es incompleto o inexistente.</li>
+</ul>
+</article>
 </div>
 </section>
 
 <section class="panel" id="practica">
 <div class="section-heading"><span>9</span><h2>Práctica y siguientes pasos</h2></div>
 <p>Comprueba que distingues entre selección verdaderamente aleatoria, inclusión equiprobable y conveniencia operativa.</p>
+
 <div class="completion-box">
 <div><strong>¿Terminaste esta lección?</strong><span>Tu progreso se guarda en este navegador.</span></div>
 <button class="complete-topic-btn" type="button" data-complete-topic>Marcar tema como completado</button>
 </div>
+
 <div class="practice-actions">
 <a class="btn btn-primary" href="#">Resolver ejercicios de MAS</a>
 <a class="btn btn-secondary" href="../">Volver a Muestreo probabilístico</a>
 </div>
 </section>
 
-<div class="ea-ad-slot ea-ad-slot--leaderboard" data-ad-position="lesson-bottom" data-ad-format="horizontal" aria-hidden="true"></div>
+<div class="ea-ad-slot ea-ad-slot--leaderboard"
+data-ad-position="lesson-bottom"
+data-ad-format="horizontal"
+aria-hidden="true"></div>
 
 </article>
 
 <aside class="sidebar">
 <section class="side-card">
 <h2>Tu progreso en la ruta</h2>
-<div class="progress-head"><strong>Inferencia Estadística</strong><span data-progress-percent>0%</span></div>
+<div class="progress-head">
+<strong>Inferencia Estadística</strong>
+<span data-progress-percent>0%</span>
+</div>
 <div class="progress-bar"><span data-progress-bar style="width:0%"></span></div>
 <small><span data-progress-count>0</span> de <span data-progress-total>12</span> temas completados</small>
 </section>
@@ -181,7 +329,10 @@
 </nav>
 </section>
 
-<div class="ea-ad-slot ea-ad-slot--rectangle" data-ad-position="sidebar-top" data-ad-format="rectangle" aria-hidden="true"></div>
+<div class="ea-ad-slot ea-ad-slot--rectangle"
+data-ad-position="sidebar-top"
+data-ad-format="rectangle"
+aria-hidden="true"></div>
 
 <section class="side-card related">
 <h2>En esta sección</h2>
@@ -204,7 +355,7 @@
 
 <section class="side-card next-card">
 <h2>Siguiente en la ruta</h2>
-<a href="../sistematico/"><strong>Muestreo sistemático</strong><span>Concepto, procedimiento, intervalo k, ventajas y ejemplos.</span></a>
+<a href="../sistematico/"><strong>Muestreo sistemático</strong><span>Concepto, procedimiento, intervalo \(k\), ventajas y ejemplos.</span></a>
 <a class="btn btn-primary" href="../sistematico/">Ir al siguiente tema →</a>
 <a class="route-back" href="../">← Volver a Muestreo probabilístico</a>
 </section>
