@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aprende qué es el muestreo, sus conceptos fundamentales, tipos probabilísticos y no probabilísticos, cómo elegir un método y cómo relacionarlo con el tamaño de muestra.">
+  <meta name="theme-color" content="#0b63f6">
+
+  <title>Muestreo | Estadística Abierta</title>
+
+  <link rel="stylesheet" href="../../../css/styles.css">
+  <link rel="stylesheet" href="muestreo.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="../../../index.html" class="brand" aria-label="Estadística Abierta - Inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="brand-text">Estadística Abierta</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle"
+              aria-label="Abrir menú"
+              aria-expanded="false"
+              aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <a href="../../../index.html">Inicio</a>
+        <a class="active" href="../">Aprender</a>
+        <a href="../../../index.html#herramientas">Herramientas</a>
+        <a href="../../../index.html#practica">Práctica</a>
+        <a href="../../../index.html#temas">Recursos</a>
+        <a href="../../../index.html#acerca">Acerca de</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="container breadcrumb">
+      <a href="../../../index.html">Inicio</a>
+      <span>›</span>
+      <a href="../">Inferencia Estadística</a>
+      <span>›</span>
+      <span>Muestreo</span>
+    </div>
+
+    <div class="container learning-layout">
+
+      <article class="learning-main">
+
+        <section class="lesson-hero" id="inicio">
+          <div class="lesson-hero-copy">
+            <span class="route-label">Inferencia Estadística</span>
+            <h1>Muestreo</h1>
+            <p class="lesson-subtitle">Cómo seleccionar una muestra representativa de una población.</p>
+            <p class="lesson-intro">
+              El muestreo es una parte fundamental de la inferencia estadística.
+              Esta sección está diseñada para ayudarte a comprender qué es, por qué se utiliza,
+              qué métodos existen y qué criterios importan al elegir uno.
+            </p>
+
+            <div class="hero-mini-features">
+              <span>▭ Conceptos claros</span>
+              <span>⚙ Ejemplos aplicados</span>
+              <span>▥ Comparaciones entre métodos</span>
+              <span>◇ Orientación para elegir</span>
+            </div>
+          </div>
+
+          <div class="sampling-visual" aria-label="Representación de población y muestra">
+            <div class="population">
+              <strong>Población</strong>
+              <div class="people-grid">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span class="selected"></span><span></span><span></span>
+                <span></span><span class="selected"></span><span></span><span class="selected"></span><span></span>
+                <span></span><span></span><span class="selected"></span><span></span><span></span>
+              </div>
+            </div>
+
+            <div class="sampling-arrow">→</div>
+
+            <div class="sample">
+              <strong>Muestra</strong>
+              <div class="sample-circle">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="content-section" id="conceptos">
+          <div class="section-title-row">
+            <div>
+              <span class="section-number">1</span>
+              <h2>Conceptos fundamentales</h2>
+            </div>
+            <span class="section-note">Base para todo el bloque de muestreo</span>
+          </div>
+
+          <p class="section-intro-text">
+            Antes de elegir un método, conviene distinguir algunos conceptos que aparecen
+            constantemente en diseño muestral.
+          </p>
+
+          <div class="concept-grid">
+            <a class="concept-card" href="#poblacion">
+              <div class="concept-icon">●●●</div>
+              <h3>Población</h3>
+              <p>Conjunto total de unidades sobre las que queremos aprender.</p>
+            </a>
+
+            <a class="concept-card" href="#muestra">
+              <div class="concept-icon">●●</div>
+              <h3>Muestra</h3>
+              <p>Subconjunto de la población que realmente observamos.</p>
+            </a>
+
+            <a class="concept-card" href="#marco">
+              <div class="concept-icon">▤</div>
+              <h3>Marco muestral</h3>
+              <p>Listado o estructura desde la que se seleccionan unidades.</p>
+            </a>
+
+            <a class="concept-card" href="#representatividad">
+              <div class="concept-icon warning">◎</div>
+              <h3>Representatividad</h3>
+              <p>Qué tan adecuadamente la muestra refleja a la población objetivo.</p>
+            </a>
+          </div>
+
+          <div class="micro-concepts">
+            <span id="poblacion"><strong>Población objetivo:</strong> quiénes o qué unidades queremos estudiar.</span>
+            <span id="muestra"><strong>Unidad de análisis:</strong> elemento individual sobre el que observamos información.</span>
+            <span id="marco"><strong>Marco muestral:</strong> mecanismo práctico que permite localizar unidades elegibles.</span>
+            <span id="representatividad"><strong>Sesgo de selección:</strong> aparece cuando el proceso favorece sistemáticamente ciertos casos.</span>
+          </div>
+        </section>
+
+
+        <section class="ad-slot" aria-label="Espacio reservado para publicidad futura">
+          <div class="ad-placeholder">
+            <span class="ad-icon">▧</span>
+            <div>
+              <strong>Espacio reservado para publicidad</strong>
+              <small>Se utilizará solo después de la aprobación de AdSense y sin interrumpir el aprendizaje.</small>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="content-section" id="tipos">
+          <div class="section-title-row">
+            <div>
+              <span class="section-number">2</span>
+              <h2>Tipos de muestreo</h2>
+            </div>
+          </div>
+
+          <p class="section-intro-text">
+            La clasificación principal distingue entre métodos <strong>probabilísticos</strong>
+            y <strong>no probabilísticos</strong>. La diferencia no es solo terminológica:
+            cambia lo que podemos justificar estadísticamente a partir de la muestra.
+          </p>
+
+          <div class="sampling-types">
+
+            <section class="type-panel probabilistic">
+              <div class="type-header">
+                <div class="type-icon">▥</div>
+                <div>
+                  <h3>Muestreo probabilístico</h3>
+                  <p>La selección se basa en un mecanismo aleatorio con probabilidades de inclusión conocidas o definibles.</p>
+                </div>
+              </div>
+
+              <div class="method-list">
+                <a href="probabilistico/aleatorio-simple/">
+                  <span class="method-icon">⠿</span>
+                  <div>
+                    <strong>Aleatorio simple</strong>
+                    <small>Selección directa mediante azar.</small>
+                  </div>
+                  <span>→</span>
+                </a>
+
+                <a href="probabilistico/sistematico/">
+                  <span class="method-icon">━</span>
+                  <div>
+                    <strong>Sistemático</strong>
+                    <small>Selección a intervalos regulares después de un inicio aleatorio.</small>
+                  </div>
+                  <span>→</span>
+                </a>
+
+                <a href="probabilistico/estratificado/">
+                  <span class="method-icon">▰</span>
+                  <div>
+                    <strong>Estratificado</strong>
+                    <small>La población se divide en estratos relevantes.</small>
+                  </div>
+                  <span>→</span>
+                </a>
+
+                <a href="probabilistico/conglomerados/">
+                  <span class="method-icon">⠶</span>
+                  <div>
+                    <strong>Por conglomerados</strong>
+                    <small>Se seleccionan grupos naturales de unidades.</small>
+                  </div>
+                  <span>→</span>
+                </a>
+
+                <a href="probabilistico/multietapico/">
+                  <span class="method-icon">▟</span>
+                  <div>
+                    <strong>Multietápico</strong>
+                    <small>Selección realizada en varias etapas sucesivas.</small>
+                  </div>
+                  <span>→</span>
+                </a>
+              </div>
+
+              <a class="panel-link" href="probabilistico/">Explorar muestreo probabilístico →</a>
+            </section>
+
+
+            <section class="type-panel non-probabilistic">
+              <div class="type-header">
+                <div class="type-icon">●●</div>
+                <div>
+                  <h3>Muestreo no probabilístico</h3>
+                  <p>La selección no depende de probabilidades conocidas y puede basarse en accesibilidad o criterios de investigación.</p>
+                </div>
+              </div>
+
+              <div class="method-list">
+                <a href="no-probabilistico/conveniencia/">
+                  <span class="method-icon">●●</span>
+                  <div>
+                    <strong>Por conveniencia</strong>
+                    <small>Se seleccionan unidades accesibles.</small>
+                  </div>
+                  <span>→</span>
+                </a>
+
+                <a href="no-probabilistico/cuotas/">
+                  <span class="method-icon">◔</span>
+                  <div>
+                    <strong>Por cuotas</strong>
+                    <small>Se buscan determinadas proporciones de subgrupos.</small>
+                  </div>
+                  <span>→</span>
+                </a>
+
+                <a href="no-probabilistico/bola-de-nieve/">
+                  <span class="method-icon">⌘</span>
+                  <div>
+                    <strong>Bola de nieve</strong>
+                    <small>Participantes iniciales ayudan a localizar otros participantes.</small>
+                  </div>
+                  <span>→</span>
+                </a>
+
+                <a href="no-probabilistico/intencional/">
+                  <span class="method-icon">●</span>
+                  <div>
+                    <strong>Intencional o por juicio</strong>
+                    <small>Selección según criterios relevantes para el estudio.</small>
+                  </div>
+                  <span>→</span>
+                </a>
+              </div>
+
+              <a class="panel-link" href="no-probabilistico/">Explorar muestreo no probabilístico →</a>
+            </section>
+
+          </div>
+        </section>
+
+
+        <section class="content-section choice-section" id="elegir">
+          <div class="section-title-row">
+            <div>
+              <span class="section-number green">3</span>
+              <h2>¿Qué método elegir?</h2>
+            </div>
+          </div>
+
+          <p class="section-intro-text">
+            No existe un método universalmente superior. La elección depende de la población,
+            el objetivo del estudio, el marco muestral disponible, los recursos y el tipo de
+            inferencia que necesitas realizar.
+          </p>
+
+          <div class="decision-grid">
+            <div class="decision-card">
+              <span>1</span>
+              <strong>¿Existe un marco muestral?</strong>
+              <p>Determina qué métodos pueden aplicarse de manera práctica.</p>
+            </div>
+            <div class="decision-card">
+              <span>2</span>
+              <strong>¿Necesitas representar subgrupos?</strong>
+              <p>Puede hacer conveniente considerar una estrategia estratificada.</p>
+            </div>
+            <div class="decision-card">
+              <span>3</span>
+              <strong>¿La población está muy dispersa?</strong>
+              <p>La logística puede favorecer conglomerados o diseños multietápicos.</p>
+            </div>
+            <div class="decision-card">
+              <span>4</span>
+              <strong>¿La población es difícil de localizar?</strong>
+              <p>En ciertos contextos puede requerirse un método no probabilístico.</p>
+            </div>
+          </div>
+
+          <a class="btn btn-secondary section-cta" href="../../../herramientas/elegir-tipo-muestreo/">
+            Abrir guía para elegir un método →
+          </a>
+        </section>
+
+
+        <section class="content-section" id="comparar">
+          <div class="section-title-row">
+            <div>
+              <span class="section-number">4</span>
+              <h2>Comparación rápida</h2>
+            </div>
+          </div>
+
+          <div class="comparison-scroll">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Método</th>
+                  <th>Idea central</th>
+                  <th>Ventaja principal</th>
+                  <th>Precaución importante</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Aleatorio simple</td>
+                  <td>Azar directo</td>
+                  <td>Simplicidad conceptual</td>
+                  <td>Necesita un marco adecuado</td>
+                </tr>
+                <tr>
+                  <td>Sistemático</td>
+                  <td>Cada k-ésima unidad</td>
+                  <td>Implementación sencilla</td>
+                  <td>Revisar periodicidad</td>
+                </tr>
+                <tr>
+                  <td>Estratificado</td>
+                  <td>Muestrear dentro de subgrupos</td>
+                  <td>Representación y precisión</td>
+                  <td>Requiere definir estratos útiles</td>
+                </tr>
+                <tr>
+                  <td>Conglomerados</td>
+                  <td>Seleccionar grupos naturales</td>
+                  <td>Reduce costos logísticos</td>
+                  <td>Puede perder precisión</td>
+                </tr>
+                <tr>
+                  <td>Conveniencia</td>
+                  <td>Casos accesibles</td>
+                  <td>Rapidez y bajo costo</td>
+                  <td>Generalización limitada</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <a class="text-link inline-link" href="../../../comparar/metodos-muestreo/">
+            Ver comparación completa →
+          </a>
+        </section>
+
+
+        <section class="content-section" id="tamano">
+          <div class="section-title-row">
+            <div>
+              <span class="section-number">5</span>
+              <h2>Relación con el tamaño de muestra</h2>
+            </div>
+          </div>
+
+          <div class="sample-size-box">
+            <div>
+              <h3>El método y el tamaño de muestra son decisiones relacionadas, pero distintas.</h3>
+              <p>
+                Elegir un método de selección no determina automáticamente cuántas observaciones
+                necesitas. El tamaño dependerá además del parámetro de interés, precisión deseada,
+                variabilidad, nivel de confianza, potencia y diseño utilizado.
+              </p>
+            </div>
+            <a class="btn btn-secondary" href="../../../aprender/tamano-de-muestra/">
+              Explorar tamaño de muestra →
+            </a>
+          </div>
+        </section>
+
+
+        <section class="ad-slot" aria-label="Segundo espacio reservado para publicidad futura">
+          <div class="ad-placeholder">
+            <span class="ad-icon">▧</span>
+            <div>
+              <strong>Segundo espacio reservado para publicidad</strong>
+              <small>Ubicado lejos de la explicación principal y antes del cierre de la lección.</small>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="content-section practice-section" id="practica">
+          <div class="section-title-row">
+            <div>
+              <span class="section-number green">6</span>
+              <h2>Práctica y siguientes pasos</h2>
+            </div>
+          </div>
+
+          <div class="practice-grid">
+            <article>
+              <span class="practice-icon">✓</span>
+              <h3>Comprueba lo aprendido</h3>
+              <p>Identifica qué método tendría sentido en distintos escenarios.</p>
+              <a href="#">Práctica guiada →</a>
+            </article>
+
+            <article>
+              <span class="practice-icon">⇄</span>
+              <h3>Compara métodos</h3>
+              <p>Analiza cuándo dos alternativas parecidas producen decisiones distintas.</p>
+              <a href="../../../comparar/metodos-muestreo/">Abrir comparador →</a>
+            </article>
+
+            <article>
+              <span class="practice-icon">→</span>
+              <h3>Sigue profundizando</h3>
+              <p>Continúa por la rama probabilística o no probabilística.</p>
+              <a href="probabilistico/">Continuar aprendiendo →</a>
+            </article>
+          </div>
+        </section>
+
+      </article>
+
+
+      <aside class="learning-sidebar">
+
+        <section class="sidebar-card progress-card">
+          <div class="sidebar-title">
+            <span>▥</span>
+            <h2>Tu progreso en la ruta</h2>
+          </div>
+          <strong>Inferencia Estadística</strong>
+          <div class="progress-row">
+            <span>Lección 1 de 12</span>
+            <span>8%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill"></div>
+          </div>
+          <a class="btn btn-primary sidebar-button" href="../">Ver toda la ruta →</a>
+        </section>
+
+
+        <section class="sidebar-card toc-card">
+          <div class="sidebar-title">
+            <span>▤</span>
+            <h2>En esta página</h2>
+          </div>
+          <nav class="toc-nav" aria-label="Índice de Muestreo">
+            <a href="#conceptos">Conceptos fundamentales</a>
+            <a href="#tipos">Tipos de muestreo</a>
+            <a href="#elegir">¿Qué método elegir?</a>
+            <a href="#comparar">Comparación de métodos</a>
+            <a href="#tamano">Tamaño de muestra</a>
+            <a href="#practica">Práctica y siguientes pasos</a>
+          </nav>
+        </section>
+
+
+        <section class="sidebar-card action-card">
+          <div class="action-icon">⚙</div>
+          <h2>¿Qué método debo usar?</h2>
+          <p>Responde algunas preguntas y recibe orientación sobre qué métodos revisar para tu estudio.</p>
+          <a class="btn btn-primary sidebar-button" href="../../../herramientas/elegir-tipo-muestreo/">
+            Ir a la herramienta →
+          </a>
+        </section>
+
+
+        <section class="sidebar-card">
+          <div class="sidebar-title">
+            <span>⇄</span>
+            <h2>Comparar métodos</h2>
+          </div>
+          <p>Consulta diferencias prácticas entre los principales diseños de muestreo.</p>
+          <a class="btn btn-secondary sidebar-button" href="../../../comparar/metodos-muestreo/">
+            Ver comparación →
+          </a>
+        </section>
+
+
+        <section class="sidebar-card">
+          <div class="sidebar-title">
+            <span>▭</span>
+            <h2>Temas relacionados</h2>
+          </div>
+          <div class="related-links">
+            <a href="../../../aprender/tamano-de-muestra/">Tamaño de muestra <span>→</span></a>
+            <a href="#">Error muestral <span>→</span></a>
+            <a href="../intervalos-confianza/">Intervalos de confianza <span>→</span></a>
+            <a href="#">Diseño de estudios <span>→</span></a>
+            <a href="#">Aplicaciones en encuestas <span>→</span></a>
+          </div>
+        </section>
+
+      </aside>
+
+    </div>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../../index.html">
+          <span class="brand-mark small" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+          <span class="brand-text">Estadística Abierta</span>
+        </a>
+        <p>Entiende la estadística. No la memorices.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Navegación del pie">
+        <a href="../../../index.html">Inicio</a>
+        <a href="../">Aprender</a>
+        <a href="../../../index.html#herramientas">Herramientas</a>
+        <a href="../../../index.html#practica">Práctica</a>
+        <a href="../../../index.html#temas">Recursos</a>
+        <a href="../../../index.html#acerca">Acerca de</a>
+      </nav>
+
+      <div class="footer-note">
+        <span>Contenido educativo gratuito.</span>
+        <span>© <span id="currentYear"></span> Estadística Abierta</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../../js/main.js"></script>
+</body>
+</html>
