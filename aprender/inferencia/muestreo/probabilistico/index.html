@@ -1,20 +1,159 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muestreo probabilístico | Estadística Abierta</title>
-  <link rel="stylesheet" href="../../../../css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muestreo probabilístico: tipos, cuándo usarlo y ejemplos | Estadística Abierta</title>
+<meta name="description" content="Aprende qué es el muestreo probabilístico, cuándo usarlo y sus principales métodos: aleatorio simple, sistemático, estratificado, conglomerados y multietápico.">
+<link rel="canonical" href="https://estadistica-abierta.pages.dev/aprender/inferencia/muestreo/probabilistico/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Muestreo probabilístico | Estadística Abierta">
+<meta property="og:description" content="Guía clara y aplicada sobre muestreo probabilístico y sus principales métodos.">
+<meta property="og:url" content="https://estadistica-abierta.pages.dev/aprender/inferencia/muestreo/probabilistico/">
+<meta name="theme-color" content="#0b63f6">
+<link rel="stylesheet" href="../../../../css/styles.css">
+<link rel="stylesheet" href="probabilistico.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LearningResource","name":"Muestreo probabilístico","description":"Lección sobre muestreo probabilístico, sus métodos y aplicaciones.","educationalLevel":"Universitario","learningResourceType":"Lección","inLanguage":"es","isPartOf":{"@type":"Course","name":"Inferencia Estadística"}}
+</script>
 </head>
 <body>
-  <main class="container" style="padding:60px 0;max-width:900px;">
-    <p><a href="../" style="color:#0b63f6;font-weight:700;">← Volver a Muestreo</a></p>
-    <h1 style="font-size:clamp(2.5rem,8vw,4.5rem);margin:18px 0 12px;">Muestreo probabilístico</h1>
-    <p style="color:#52617a;font-size:1.08rem;">
-      Esta subpágina ya está reservada dentro de la arquitectura de Estadística Abierta.
-      Su contenido se desarrollará posteriormente con fuentes académicas, ejemplos, criterios de uso,
-      limitaciones, comparaciones y ejercicios.
-    </p>
-  </main>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="../../../../index.html" class="brand"><span class="brand-mark"><span></span><span></span><span></span></span><span class="brand-text">Estadística Abierta</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+    <nav class="main-nav" id="mainNav">
+      <a href="../../../../index.html">Inicio</a>
+      <a class="active" href="../../../">Aprender</a>
+      <a href="../../../../index.html#herramientas">Herramientas</a>
+      <a href="../../../../index.html#practica">Práctica</a>
+      <a href="../../../../index.html#temas">Recursos</a>
+      <a href="../../../../index.html#acerca">Acerca de</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container breadcrumb">
+    <a href="../../../../index.html">Inicio</a><span>›</span><a href="../../../">Inferencia Estadística</a><span>›</span><a href="../">Muestreo</a><span>›</span><span>Muestreo probabilístico</span>
+  </div>
+
+  <div class="container lesson-layout">
+    <aside class="left-rail">
+      <div class="rail-card">
+        <h2>Inferencia Estadística</h2>
+        <nav class="rail-nav">
+          <a href="../../../">Introducción</a>
+          <a href="../../../">Estimación</a>
+          <a href="../../../">Pruebas de hipótesis</a>
+          <a href="../../../">Intervalos de confianza</a>
+          <div class="rail-group active-group">
+            <a class="group-title" href="../">Muestreo</a>
+            <a href="../#conceptos">Conceptos fundamentales</a>
+            <a href="../#tipos">Tipos de muestreo</a>
+            <a class="current" href="./">Muestreo probabilístico</a>
+            <a href="../no-probabilistico/">Muestreo no probabilístico</a>
+            <a href="../#elegir">¿Qué método elegir?</a>
+            <a href="../#comparar">Comparación de métodos</a>
+            <a href="../#tamano">Tamaño de muestra</a>
+          </div>
+        </nav>
+      </div>
+    </aside>
+
+    <article class="lesson-main">
+      <section class="prob-hero">
+        <div class="prob-copy">
+          <span class="route-label">Muestreo</span>
+          <h1>Muestreo probabilístico</h1>
+          <p class="hero-subtitle">Selección aleatoria con probabilidades conocidas.</p>
+          <p class="hero-description">El muestreo probabilístico agrupa métodos en los que la selección se realiza mediante un mecanismo aleatorio y cada unidad elegible tiene una probabilidad de inclusión conocida o definible. Esto permite cuantificar la incertidumbre muestral y sustentar inferencias estadísticas sobre la población.</p>
+          <div class="hero-points"><span>✓ Probabilidades conocidas</span><span>▥ Permite inferencia estadística</span><span>◎ Cuantifica error muestral</span><span>◇ Útil para estudios representativos</span></div>
+        </div>
+        <div class="prob-visual">
+          <div class="prob-population"><strong>Población (N)</strong><div class="prob-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+          <div class="prob-arrow">↘</div>
+          <div class="prob-sample"><strong>Muestra (n)</strong><div class="prob-sample-circle"><span></span><span></span><span></span><span></span><span></span></div></div>
+        </div>
+      </section>
+
+      <section class="content-section" id="que-es">
+        <div class="section-title-row"><div><span class="section-number">1</span><h2>¿Qué es el muestreo probabilístico?</h2></div></div>
+        <p class="section-intro-text">En un diseño probabilístico, la elección de la muestra se apoya en un mecanismo aleatorio. La idea importante no es simplemente “escoger al azar”, sino poder describir la probabilidad con la que cada unidad puede entrar en la muestra.</p>
+        <div class="definition-box"><strong>Idea clave</strong><p>La aleatoriedad del diseño permite relacionar la muestra con la población mediante probabilidades, lo que hace posible estimar errores estándar, construir intervalos de confianza y realizar inferencia estadística bajo supuestos apropiados.</p></div>
+      </section>
+
+      <section class="content-section" id="tipos">
+        <div class="section-title-row"><div><span class="section-number">2</span><h2>Tipos de muestreo probabilístico</h2></div></div>
+        <p class="section-intro-text">Cada método responde a una necesidad distinta. La elección depende de cómo está organizada la población, del marco muestral disponible, de los costos y de la precisión requerida.</p>
+        <div class="prob-method-grid">
+          <a class="prob-method-card" href="aleatorio-simple/"><span class="method-number">1</span><div class="simple-visual">● ● ● ● ●<br>● ● ● ● ●</div><h3>Muestreo aleatorio simple</h3><p>Cada unidad se selecciona mediante un mecanismo aleatorio definido sobre el marco muestral.</p><span class="view-link">Ver tema →</span></a>
+          <a class="prob-method-card" href="sistematico/"><span class="method-number">2</span><div class="simple-visual">● — ○ — ○ — ● — ○ — ○ — ●</div><h3>Muestreo sistemático</h3><p>Después de un inicio aleatorio, se selecciona cada k-ésima unidad de una lista ordenada.</p><span class="view-link">Ver tema →</span></a>
+          <a class="prob-method-card" href="estratificado/"><span class="method-number">3</span><div class="strata-visual"><div class="stratum s1">●●●</div><div class="stratum s2">●●●</div><div class="stratum s3">●●●</div></div><h3>Muestreo estratificado</h3><p>La población se divide en estratos relevantes y se seleccionan unidades dentro de cada uno.</p><span class="view-link">Ver tema →</span></a>
+          <a class="prob-method-card wide-card" href="conglomerados/"><span class="method-number">4</span><div class="cluster-visual"><div>●●●</div><div>●●●</div><div>●●●</div></div><h3>Muestreo por conglomerados</h3><p>Se seleccionan grupos naturales de unidades y se observan todas o algunas unidades dentro de ellos.</p><span class="view-link">Ver tema →</span></a>
+          <a class="prob-method-card wide-card" href="multietapico/"><span class="method-number">5</span><div class="tree-visual"><span class="root-node"></span><div class="branch-row"><i></i><i></i><i></i></div><div class="branch-row small"><i></i><i></i><i></i><i></i><i></i></div></div><h3>Muestreo multietápico</h3><p>Combina varios métodos en etapas sucesivas, por ejemplo regiones, distritos, hogares y personas.</p><span class="view-link">Ver tema →</span></a>
+        </div>
+      </section>
+
+      <section class="content-section" id="cuando">
+        <div class="section-title-row"><div><span class="section-number green">3</span><h2>¿Cuándo usar muestreo probabilístico?</h2></div></div>
+        <div class="use-cases">
+          <article><span>✓</span><div><h3>Cuando necesitas inferencia sobre una población</h3><p>Especialmente útil para estimar parámetros y cuantificar incertidumbre.</p></div></article>
+          <article><span>✓</span><div><h3>Cuando existe un marco muestral utilizable</h3><p>Muchos diseños requieren identificar o estructurar las unidades elegibles.</p></div></article>
+          <article><span>✓</span><div><h3>Cuando la precisión y el error muestral importan</h3><p>Permite trabajar con errores estándar e intervalos de confianza.</p></div></article>
+          <article><span>✓</span><div><h3>En encuestas y estudios representativos</h3><p>Es habitual en encuestas oficiales y estudios poblacionales.</p></div></article>
+        </div>
+      </section>
+
+      <section class="content-section" id="ventajas">
+        <div class="section-title-row"><div><span class="section-number">4</span><h2>Ventajas y limitaciones</h2></div></div>
+        <div class="pros-cons"><div class="pros"><h3>Ventajas</h3><ul><li>Facilita la inferencia estadística.</li><li>Permite cuantificar error muestral.</li><li>Reduce arbitrariedad en la selección.</li><li>Puede mejorar la representatividad si el diseño es adecuado.</li></ul></div><div class="cons"><h3>Limitaciones</h3><ul><li>Puede requerir un marco muestral costoso o difícil de construir.</li><li>Algunos diseños son complejos de implementar.</li><li>La no respuesta puede introducir sesgos.</li><li>No corrige automáticamente otros problemas del estudio.</li></ul></div></div>
+      </section>
+
+      <section class="content-section" id="comparacion">
+        <div class="section-title-row"><div><span class="section-number">5</span><h2>Comparación rápida</h2></div></div>
+        <div class="comparison-scroll"><table class="comparison-table"><thead><tr><th>Método</th><th>Cuándo destaca</th><th>Principal ventaja</th><th>Principal precaución</th></tr></thead><tbody>
+          <tr><td>Aleatorio simple</td><td>Marcos completos</td><td>Sencillez conceptual</td><td>Costos si la población está dispersa</td></tr>
+          <tr><td>Sistemático</td><td>Listados ordenados</td><td>Implementación práctica</td><td>Periodicidad</td></tr>
+          <tr><td>Estratificado</td><td>Subgrupos relevantes</td><td>Representación y precisión</td><td>Definir bien los estratos</td></tr>
+          <tr><td>Conglomerados</td><td>Poblaciones dispersas</td><td>Ahorro logístico</td><td>Mayor varianza del diseño</td></tr>
+          <tr><td>Multietápico</td><td>Encuestas complejas</td><td>Flexibilidad operativa</td><td>Análisis más complejo</td></tr>
+        </tbody></table></div>
+      </section>
+
+      <section class="content-section" id="ejemplos">
+        <div class="section-title-row"><div><span class="section-number">6</span><h2>Ejemplos aplicados</h2></div></div>
+        <div class="examples-grid">
+          <article><span>Universidad</span><h3>Encuesta de estudiantes</h3><p>Si interesa representar facultades diferentes, puede considerarse un diseño estratificado.</p></article>
+          <article><span>Encuesta de hogares</span><h3>Población dispersa</h3><p>Conglomerados o un diseño multietápico pueden reducir costos operativos.</p></article>
+          <article><span>Empresa</span><h3>Listado completo de trabajadores</h3><p>Con un marco actualizado, un diseño aleatorio simple o sistemático puede ser viable.</p></article>
+        </div>
+      </section>
+
+      <section class="ad-slot"><div class="ad-placeholder"><span class="ad-icon">▧</span><div><strong>Espacio reservado para publicidad</strong><small>Solo se activará tras aprobación de AdSense.</small></div></div></section>
+
+      <section class="content-section" id="practica">
+        <div class="section-title-row"><div><span class="section-number green">7</span><h2>Práctica y siguientes pasos</h2></div></div>
+        <div class="practice-grid">
+          <article><span class="practice-icon">✓</span><h3>Identifica el diseño</h3><p>Analiza escenarios y decide qué método probabilístico considerar.</p><a href="#">Comenzar práctica →</a></article>
+          <article><span class="practice-icon">⇄</span><h3>Compara métodos</h3><p>Revisa diferencias entre los principales diseños.</p><a href="../../../../comparar/metodos-muestreo/">Abrir comparación →</a></article>
+          <article><span class="practice-icon">→</span><h3>Siguiente tema</h3><p>Profundiza en muestreo aleatorio simple.</p><a href="aleatorio-simple/">Continuar →</a></article>
+        </div>
+      </section>
+
+      <section class="ad-slot"><div class="ad-placeholder"><span class="ad-icon">▧</span><div><strong>Segundo espacio reservado para publicidad</strong><small>Ubicado al final para no interrumpir la explicación.</small></div></div></section>
+    </article>
+
+    <aside class="right-sidebar">
+      <section class="sidebar-card progress-card"><div class="sidebar-title"><span>▥</span><h2>Tu progreso en la ruta</h2></div><strong>Inferencia Estadística</strong><div class="progress-row"><span>Ruta de aprendizaje</span><span>20%</span></div><div class="progress-track"><div class="progress-fill"></div></div><a class="btn btn-primary sidebar-button" href="../../../">Ver toda la ruta →</a></section>
+      <section class="sidebar-card"><div class="sidebar-title"><span>▤</span><h2>En esta página</h2></div><nav class="toc-nav"><a href="#que-es">¿Qué es?</a><a href="#tipos">Tipos</a><a href="#cuando">Cuándo usarlo</a><a href="#ventajas">Ventajas y limitaciones</a><a href="#comparacion">Comparación rápida</a><a href="#ejemplos">Ejemplos aplicados</a><a href="#practica">Práctica</a></nav></section>
+      <section class="sidebar-card use-sidebar"><div class="sidebar-title"><span>✓</span><h2>¿Cuándo usarlo?</h2></div><ul><li>Inferencia poblacional.</li><li>Probabilidades de selección definibles.</li><li>Error muestral cuantificable.</li><li>Diseños representativos.</li></ul></section>
+      <section class="sidebar-card"><div class="sidebar-title"><span>→</span><h2>Siguiente tema</h2></div><strong>Muestreo aleatorio simple</strong><p>Aprende cómo funciona el diseño probabilístico más básico.</p><a class="btn btn-secondary sidebar-button" href="aleatorio-simple/">Continuar →</a></section>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><a class="brand" href="../../../../index.html"><span class="brand-mark small"><span></span><span></span><span></span></span><span class="brand-text">Estadística Abierta</span></a><p>Entiende la estadística. No la memorices.</p></div><nav class="footer-nav"><a href="../../../../index.html">Inicio</a><a href="../../../">Aprender</a><a href="../../../../index.html#herramientas">Herramientas</a><a href="../../../../index.html#practica">Práctica</a><a href="../../../../index.html#temas">Recursos</a><a href="../../../../index.html#acerca">Acerca de</a></nav><div class="footer-note"><span>Contenido educativo gratuito.</span><span>© <span id="currentYear"></span> Estadística Abierta</span></div></div></footer>
+<script src="../../../../js/main.js"></script>
 </body>
 </html>
