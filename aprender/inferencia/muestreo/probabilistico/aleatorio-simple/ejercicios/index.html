@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Ejercicios de muestreo aleatorio simple resueltos paso a paso | Estadística Abierta</title>
-  <meta name="description" content="Ejercicios resueltos de muestreo aleatorio simple con datos realistas: media, varianza, proporción, error estándar, corrección por población finita e intervalos de confianza.">
+  <title>Ejercicio aplicado de muestreo aleatorio simple paso a paso | Estadística Abierta</title>
+  <meta name="description" content="Aprende a aplicar un muestreo aleatorio simple paso a paso: construir el marco, seleccionar la muestra, extraer datos, calcular media, varianza, proporción, error estándar e intervalo de confianza.">
   <link rel="canonical" href="https://estadistica-abierta.pages.dev/aprender/inferencia/muestreo/probabilistico/aleatorio-simple/ejercicios/">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Ejercicios de muestreo aleatorio simple | Estadística Abierta">
-  <meta property="og:description" content="Casos aplicados resueltos paso a paso de muestreo aleatorio simple.">
+  <meta property="og:title" content="Ejercicio aplicado de muestreo aleatorio simple | Estadística Abierta">
+  <meta property="og:description" content="Caso práctico completo de muestreo aleatorio simple con selección, cálculos, interpretación y código en R y Python.">
   <meta property="og:url" content="https://estadistica-abierta.pages.dev/aprender/inferencia/muestreo/probabilistico/aleatorio-simple/ejercicios/">
 
   <link rel="stylesheet" href="../../../../../../css/styles.css">
@@ -19,7 +19,7 @@
   <script src="../../../../../../js/math.js"></script>
 </head>
 
-<body data-course="inferencia-estadistica" data-topic-id="mas-ejercicios" data-course-total="12">
+<body data-course="inferencia-estadistica" data-topic-id="mas-ejercicios-aplicados" data-course-total="12">
 
 <header class="site-header">
   <div class="container nav-wrap">
@@ -27,9 +27,11 @@
       <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
       <span class="brand-text">Estadística Abierta</span>
     </a>
+
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
       <span></span><span></span><span></span>
     </button>
+
     <nav class="main-nav" id="mainNav">
       <a href="../../../../../../index.html">Inicio</a>
       <a class="active" href="../../../../../">Aprender</a>
@@ -56,190 +58,173 @@
 
       <section class="hero-card">
         <div>
-          <span class="eyebrow">Ejercicios resueltos</span>
-          <h1>Muestreo aleatorio simple (MAS)</h1>
-          <p class="hero-subtitle">Casos aplicados paso a paso</p>
+          <span class="eyebrow">Ejercicio aplicado</span>
+          <h1>Caso 1: selección de una muestra en software</h1>
+          <p class="hero-subtitle">Cómo seleccionar 10 viviendas de una población de 200 y analizar los datos</p>
           <p class="hero-text">
-            Aquí practicarás con datos realistas y pequeños para poder verificar cada operación.
-            Los contextos imitan problemas frecuentes en encuestas de hogares, empresas y estudios académicos.
-            Cuando los datos son simulados se indica expresamente.
+            El objetivo no es memorizar una fórmula. Vas a recorrer el mismo flujo que seguirías en un trabajo real:
+            recibir un padrón, definir el marco muestral, seleccionar unidades sin reemplazo, extraer sus datos,
+            calcular estimadores e interpretar los resultados.
           </p>
         </div>
-        <div class="hero-diagram">
-          <div class="population">
-            <div class="people-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-            <strong>Población</strong><small>\(N\)</small>
+
+        <div class="hero-flow" aria-label="Población de 200 viviendas y muestra de 10">
+          <div class="frame-box">
+            <strong>Población</strong>
+            <small>N = 200</small>
+            <div class="id-list">1<br>2<br>3<br>…<br>200</div>
           </div>
-          <div class="selection-arrow"><span>Selección<br>aleatoria</span><b>→</b></div>
-          <div class="sample">
-            <div class="sample-circle"><span></span><span></span><span></span><span></span></div>
-            <strong>Muestra</strong><small>\(n\)</small>
+          <div class="flow-arrow">
+            <span>Selección aleatoria<br>sin reemplazo</span>
+            <b>→</b>
+          </div>
+          <div class="frame-box sample">
+            <strong>Muestra</strong>
+            <small>n = 10</small>
+            <div class="id-list">17<br>35<br>62<br>…<br>198</div>
           </div>
         </div>
       </section>
 
-      <nav class="exercise-tabs" aria-label="Ejercicios de MAS">
-        <a href="#ejemplo1" class="active">Ejemplo 1<br><small>Media y varianza</small></a>
-        <a href="#ejemplo2">Ejemplo 2<br><small>Proporción</small></a>
-        <a href="#ejemplo3">Ejemplo 3<br><small>Intervalo de confianza</small></a>
-        <a href="#ejemplo4">Ejemplo 4<br><small>Selección de muestra</small></a>
-        <a href="#propuestos">Ejercicios propuestos<br><small>Para practicar</small></a>
+      <nav class="exercise-tabs" aria-label="Pasos del ejercicio">
+        <a href="#paso1">1<br><small>Planteamiento y datos</small></a>
+        <a href="#paso2" class="active">2<br><small>Selección de la muestra</small></a>
+        <a href="#paso3">3<br><small>Extracción de datos</small></a>
+        <a href="#paso4">4<br><small>Cálculos paso a paso</small></a>
+        <a href="#paso5">5<br><small>Resultados e interpretación</small></a>
+        <a href="#paso6">6<br><small>Código en R y Python</small></a>
       </nav>
 
-      <section class="panel" id="ejemplo1">
-        <div class="section-heading"><span>1</span><h2>Ejemplo 1: media, varianza y error estándar</h2></div>
+      <section class="panel" id="paso1">
+        <div class="section-heading"><span>1</span><h2>Planteamiento del ejemplo</h2></div>
 
-        <div class="context-box">
-          <strong>Contexto</strong>
-          <p>
-            Una municipalidad quiere estimar el gasto mensual en transporte de \(N=200\) hogares.
-            Se selecciona un MAS sin reemplazo de \(n=10\) hogares. Los datos son simulados, pero el procedimiento
-            es el mismo que se usaría con datos reales de una encuesta.
-          </p>
+        <div class="intro-grid">
+          <div class="context-box">
+            <h3>Contexto</h3>
+            <p>
+              Una municipalidad dispone de un padrón de <strong>200 viviendas</strong> de un distrito y desea estimar
+              el gasto mensual en agua. Para ilustrar todo el procedimiento, seleccionará un
+              <strong>muestreo aleatorio simple sin reemplazo de 10 viviendas</strong>.
+            </p>
+          </div>
+
+          <div class="data-summary">
+            <h3>Datos del problema</h3>
+            <ul>
+              <li>Tamaño poblacional: \(N=200\)</li>
+              <li>Tamaño muestral: \(n=10\)</li>
+              <li>Variable: gasto mensual en agua (S/)</li>
+              <li>Diseño: MAS sin reemplazo</li>
+              <li>Datos: simulados para enseñanza</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="exercise-grid three">
-          <div class="data-card">
-            <h3>Datos de la muestra</h3>
+        <div class="task-box">
+          <strong>Tu tarea como analista</strong>
+          <p>
+            Debes obtener una muestra válida, conservar los identificadores seleccionados y luego usar únicamente
+            esas viviendas para estimar el gasto promedio, su variabilidad y la proporción de viviendas cuyo gasto
+            supera S/ 50.
+          </p>
+        </div>
+      </section>
+
+      <section class="panel" id="paso2">
+        <div class="section-heading"><span>2</span><h2>Selección de la muestra, paso a paso</h2></div>
+
+        <div class="selection-grid">
+          <article>
+            <span class="substep">2.1</span>
+            <h3>Definir el marco muestral</h3>
+            <p>El marco debe contener una fila por vivienda y un identificador único.</p>
+            <div class="vector-box">
+              <strong>IDs disponibles</strong>
+              <code>1, 2, 3, 4, 5, …, 200</code>
+            </div>
+            <p class="mini-note"><strong>Comprobar antes:</strong> no debe haber IDs duplicados, vacíos ni viviendas fuera de la población objetivo.</p>
+          </article>
+
+          <article>
+            <span class="substep green">2.2</span>
+            <h3>Seleccionar 10 unidades al azar</h3>
+            <p>Usamos selección aleatoria sin reemplazo. En este ejemplo fijamos una semilla para que el proceso pueda reproducirse.</p>
+            <div class="selected-box">
+              <strong>IDs seleccionados</strong>
+              <p>17, 35, 62, 85, 91,<br>104, 118, 142, 176, 198</p>
+            </div>
+          </article>
+
+          <article>
+            <span class="substep teal">2.3</span>
+            <h3>Verificar la selección</h3>
+            <ul class="verification-list">
+              <li>Hay exactamente 10 identificadores.</li>
+              <li>No se repite ningún ID.</li>
+              <li>Todos están entre 1 y 200.</li>
+              <li>La selección fue sin reemplazo.</li>
+              <li>Cada unidad tiene probabilidad de inclusión \(\pi_i=n/N=0.05\).</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="important-box">
+          <strong>Qué debe guardar una persona en un trabajo real</strong>
+          <p>
+            Conserva el archivo del marco original, la fecha de selección, el tamaño \(N\), el tamaño \(n\),
+            la semilla empleada, el software utilizado y el listado final de IDs seleccionados.
+            Eso permite auditar y reproducir la muestra.
+          </p>
+        </div>
+      </section>
+
+      <section class="panel" id="paso3">
+        <div class="section-heading"><span>3</span><h2>Extraer los datos de las viviendas seleccionadas</h2></div>
+
+        <p class="lead-text">
+          Una vez seleccionados los IDs, se cruza la lista de la muestra con la base de datos original.
+          El resultado es la base de análisis:
+        </p>
+
+        <div class="tables-grid">
+          <div class="table-card">
+            <h3>IDs que salen del sorteo</h3>
             <table>
-              <thead><tr><th>Hogar</th><th>Gasto mensual (S/)</th></tr></thead>
+              <thead><tr><th>Orden</th><th>ID vivienda</th></tr></thead>
               <tbody>
-                <tr><td>1</td><td>320</td></tr>
-                <tr><td>2</td><td>280</td></tr>
-                <tr><td>3</td><td>450</td></tr>
-                <tr><td>4</td><td>390</td></tr>
-                <tr><td>5</td><td>510</td></tr>
-                <tr><td>6</td><td>300</td></tr>
-                <tr><td>7</td><td>420</td></tr>
-                <tr><td>8</td><td>360</td></tr>
-                <tr><td>9</td><td>470</td></tr>
-                <tr><td>10</td><td>400</td></tr>
+                <tr><td>1</td><td>17</td></tr>
+                <tr><td>2</td><td>35</td></tr>
+                <tr><td>3</td><td>62</td></tr>
+                <tr><td>4</td><td>85</td></tr>
+                <tr><td>5</td><td>91</td></tr>
+                <tr><td>6</td><td>104</td></tr>
+                <tr><td>7</td><td>118</td></tr>
+                <tr><td>8</td><td>142</td></tr>
+                <tr><td>9</td><td>176</td></tr>
+                <tr><td>10</td><td>198</td></tr>
               </tbody>
             </table>
           </div>
 
-          <div class="calc-card">
-            <h3>1. Media muestral</h3>
-            <p>La media se calcula con:</p>
-            <div class="formula-box">\[
-              \bar y=\frac{1}{n}\sum_{i=1}^{n}y_i
-            \]</div>
-            <p>Sustituyendo:</p>
-            <div class="formula-box">\[
-              \bar y=\frac{320+280+\cdots+400}{10}=390
-            \]</div>
-            <div class="result-box"><strong>Resultado:</strong> \(\bar y=390\) soles.</div>
-          </div>
-
-          <div class="calc-card">
-            <h3>2. Varianza muestral</h3>
-            <p>Usamos la varianza muestral insesgada:</p>
-            <div class="formula-box">\[
-              s^2=\frac{1}{n-1}\sum_{i=1}^{n}(y_i-\bar y)^2
-            \]</div>
-            <div class="formula-box">\[
-              s^2=5711.11
-            \]</div>
-            <div class="result-box"><strong>Resultado:</strong> \(s=75.57\) soles.</div>
+          <div class="table-card highlighted">
+            <h3>Muestra con la variable de interés</h3>
+            <table>
+              <thead><tr><th>ID vivienda</th><th>Gasto agua (S/)</th><th>Gasto &gt; 50</th></tr></thead>
+              <tbody>
+                <tr><td>17</td><td>45</td><td>No</td></tr>
+                <tr><td>35</td><td>52</td><td>Sí</td></tr>
+                <tr><td>62</td><td>38</td><td>No</td></tr>
+                <tr><td>85</td><td>60</td><td>Sí</td></tr>
+                <tr><td>91</td><td>47</td><td>No</td></tr>
+                <tr><td>104</td><td>55</td><td>Sí</td></tr>
+                <tr><td>118</td><td>49</td><td>No</td></tr>
+                <tr><td>142</td><td>63</td><td>Sí</td></tr>
+                <tr><td>176</td><td>41</td><td>No</td></tr>
+                <tr><td>198</td><td>58</td><td>Sí</td></tr>
+              </tbody>
+            </table>
           </div>
         </div>
-
-        <div class="calc-wide">
-          <div>
-            <h3>3. Varianza de la media y corrección por población finita</h3>
-            <p>Como el muestreo es sin reemplazo, incorporamos la fracción de muestreo \(f=n/N\):</p>
-            <div class="formula-box">\[
-              \widehat{\mathrm{Var}}(\bar y)
-              =
-              \left(1-\frac{n}{N}\right)\frac{s^2}{n}
-            \]</div>
-          </div>
-          <div>
-            <p>Sustituyendo:</p>
-            <div class="formula-box">\[
-              \left(1-\frac{10}{200}\right)\frac{5711.11}{10}
-              =542.56
-            \]</div>
-            <p>Por tanto:</p>
-            <div class="formula-box">\[
-              SE(\bar y)=\sqrt{542.56}=23.29
-            \]</div>
-          </div>
-          <div class="result-box large">
-            <strong>Resultados</strong>
-            <span>\(\widehat{\mathrm{Var}}(\bar y)=542.56\)</span>
-            <span>\(SE(\bar y)=23.29\) soles</span>
-          </div>
-        </div>
-
-        <div class="interpretation">
-          <h3>Interpretación</h3>
-          <ul>
-            <li>El gasto mensual promedio estimado es de <strong>S/ 390</strong>.</li>
-            <li>La desviación estándar de los gastos observados es aproximadamente <strong>S/ 75.57</strong>.</li>
-            <li>El error estándar de la media es aproximadamente <strong>S/ 23.29</strong>, una medida de la precisión del estimador.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="panel" id="ejemplo2">
-        <div class="section-heading"><span>2</span><h2>Ejemplo 2: estimación de una proporción</h2></div>
-
-        <div class="context-box">
-          <strong>Contexto</strong>
-          <p>
-            Una empresa tiene \(N=1000\) trabajadores. Se toma un MAS sin reemplazo de \(n=100\).
-            De ellos, \(x=38\) reportan trabajar al menos un día por semana desde casa.
-          </p>
-        </div>
-
-        <div class="exercise-grid two">
-          <div class="calc-card">
-            <h3>1. Proporción muestral</h3>
-            <div class="formula-box">\[
-              \hat p=\frac{x}{n}=\frac{38}{100}=0.38
-            \]</div>
-            <div class="result-box"><strong>Resultado:</strong> \(\hat p=38\%\).</div>
-          </div>
-
-          <div class="calc-card">
-            <h3>2. Error estándar</h3>
-            <div class="formula-box">\[
-              \widehat{\mathrm{Var}}(\hat p)
-              =
-              (1-f)\frac{\hat p(1-\hat p)}{n-1},
-              \qquad f=\frac{100}{1000}=0.10
-            \]</div>
-            <div class="formula-box">\[
-              SE(\hat p)\approx0.0463
-            \]</div>
-            <div class="result-box"><strong>Resultado:</strong> error estándar ≈ 4.63 puntos porcentuales.</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="panel" id="ejemplo3">
-        <div class="section-heading"><span>3</span><h2>Ejemplo 3: intervalo de confianza</h2></div>
-        <p>
-          Retomando el Ejemplo 1 y usando la aproximación normal, un intervalo de confianza de 95% para la media se construye como:
-        </p>
-        <div class="formula-box">\[
-          \bar y \pm z_{0.975}\,SE(\bar y)
-        \]</div>
-        <div class="formula-box">\[
-          390 \pm 1.96(23.29)
-        \]</div>
-        <div class="result-box wide">
-          <strong>IC 95% aproximado:</strong>
-          \[
-            [344.35,\;435.65]
-          \]
-          soles.
-        </div>
-        <p class="note-text">
-          Este intervalo usa una aproximación normal para fines didácticos. En aplicaciones reales deben revisarse el tamaño muestral,
-          el diseño y los supuestos antes de elegir la aproximación.
-        </p>
       </section>
 
       <div class="ea-ad-slot ea-ad-slot--leaderboard"
@@ -247,66 +232,201 @@
            data-ad-format="horizontal"
            aria-hidden="true"></div>
 
-      <section class="panel" id="ejemplo4">
-        <div class="section-heading"><span>4</span><h2>Ejemplo 4: cómo seleccionar la muestra</h2></div>
+      <section class="panel" id="paso4">
+        <div class="section-heading"><span>4</span><h2>Cálculos paso a paso</h2></div>
 
-        <div class="selection-steps">
-          <article><b>1</b><h3>Construye el marco</h3><p>Lista las \(N\) unidades elegibles y asigna un identificador único.</p></article>
-          <article><b>2</b><h3>Define \(n\)</h3><p>Decide cuántas unidades serán seleccionadas según precisión, costos y objetivos.</p></article>
-          <article><b>3</b><h3>Genera números aleatorios</h3><p>Usa software o un generador reproducible para elegir \(n\) identificadores sin reemplazo.</p></article>
-          <article><b>4</b><h3>Conserva el registro</h3><p>Documenta semilla, fecha, marco y procedimiento para que la selección pueda auditarse.</p></article>
-        </div>
+        <div class="calculation-grid">
 
-        <div class="software-box">
-          <h3>Ejemplo conceptual en software</h3>
-          <p>Si los identificadores son 1, 2, …, 200 y necesitas 10 unidades, el programa debe seleccionar 10 identificadores distintos sin reemplazo. El análisis posterior utiliza exactamente esas unidades.</p>
+          <article>
+            <h3>4.1 Media muestral</h3>
+            <p>Sumamos los 10 gastos y dividimos entre 10:</p>
+            <div class="formula-box">
+              \[
+              \bar y=\frac{1}{n}\sum_{i=1}^{n}y_i
+              \]
+            </div>
+            <div class="formula-box">
+              \[
+              \bar y=\frac{45+52+38+60+47+55+49+63+41+58}{10}=50.8
+              \]
+            </div>
+            <div class="result-box"><strong>Media estimada:</strong> S/ 50.80</div>
+          </article>
+
+          <article>
+            <h3>4.2 Varianza muestral</h3>
+            <p>Usamos la varianza muestral con denominador \(n-1\):</p>
+            <div class="formula-box">
+              \[
+              s^2=\frac{1}{n-1}\sum_{i=1}^{n}(y_i-\bar y)^2
+              \]
+            </div>
+            <div class="result-box">
+              <strong>Resultado:</strong><br>
+              \(s^2=68.40\)<br>
+              \(s=8.27\)
+            </div>
+          </article>
+
+          <article>
+            <h3>4.3 Varianza y error estándar de la media</h3>
+            <p>Como el MAS es sin reemplazo, aplicamos la corrección por población finita:</p>
+            <div class="formula-box">
+              \[
+              \widehat{\mathrm{Var}}(\bar y)
+              =
+              \left(1-\frac{n}{N}\right)\frac{s^2}{n}
+              \]
+            </div>
+            <div class="formula-box">
+              \[
+              \left(1-\frac{10}{200}\right)\frac{68.40}{10}=6.498
+              \]
+            </div>
+            <div class="result-box">
+              \[
+              SE(\bar y)=\sqrt{6.498}=2.55
+              \]
+            </div>
+          </article>
+
+          <article>
+            <h3>4.4 Proporción de viviendas con gasto &gt; S/ 50</h3>
+            <p>Hay 5 viviendas de 10 por encima de S/ 50:</p>
+            <div class="formula-box">
+              \[
+              \hat p=\frac{x}{n}=\frac{5}{10}=0.50
+              \]
+            </div>
+            <div class="result-box"><strong>Proporción estimada:</strong> 50%</div>
+          </article>
+
+          <article>
+            <h3>4.5 Intervalo de confianza para la media</h3>
+            <p>Como ejemplo didáctico usamos la aproximación normal:</p>
+            <div class="formula-box">
+              \[
+              \bar y\pm1.96\,SE(\bar y)
+              \]
+            </div>
+            <div class="formula-box">
+              \[
+              50.8\pm1.96(2.55)
+              \]
+            </div>
+            <div class="result-box"><strong>IC 95% aproximado:</strong> [45.80, 55.80] soles.</div>
+          </article>
+
         </div>
       </section>
 
-      <section class="panel" id="propuestos">
-        <div class="section-heading"><span>5</span><h2>Ejercicios propuestos</h2></div>
+      <section class="panel" id="paso5">
+        <div class="section-heading"><span>5</span><h2>Resultados e interpretación</h2></div>
 
-        <div class="proposed-grid">
+        <div class="interpretation-grid">
           <article>
-            <span>Nivel 1</span>
-            <h3>Media y varianza</h3>
-            <p>Con los datos 52, 48, 61, 55, 59, 63, 50 y 56, calcula \(\bar y\), \(s^2\) y \(s\).</p>
+            <span>1</span>
+            <h3>Media</h3>
+            <p>La muestra estima que una vivienda del distrito gasta en promedio <strong>S/ 50.80 al mes</strong> en agua.</p>
           </article>
           <article>
-            <span>Nivel 2</span>
+            <span>2</span>
+            <h3>Variabilidad</h3>
+            <p>La desviación estándar de <strong>S/ 8.27</strong> resume cuánto varían los gastos individuales alrededor de la media muestral.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>Precisión</h3>
+            <p>El error estándar de <strong>S/ 2.55</strong> cuantifica la variabilidad esperada de la media muestral bajo este diseño.</p>
+          </article>
+          <article>
+            <span>4</span>
             <h3>Proporción</h3>
-            <p>En una muestra de 80 clientes, 26 prefieren el canal digital. Estima la proporción.</p>
+            <p>En la muestra, <strong>50%</strong> de las viviendas gasta más de S/ 50 mensuales.</p>
           </article>
+        </div>
+
+        <div class="warning-box">
+          <strong>Importante</strong>
+          <p>
+            Los valores de este caso son simulados para enseñar el procedimiento. No representan estimaciones reales
+            de un distrito ni deben citarse como estadísticas oficiales.
+          </p>
+        </div>
+      </section>
+
+      <section class="panel" id="paso6">
+        <div class="section-heading"><span>6</span><h2>Cómo hacerlo en R y Python</h2></div>
+
+        <div class="code-grid">
           <article>
-            <span>Nivel 3</span>
-            <h3>Corrección finita</h3>
-            <p>Con \(N=500\), \(n=50\) y \(s^2=144\), calcula la varianza y el error estándar de \(\bar y\).</p>
+            <div class="code-title"><strong>R</strong><span>Selección reproducible</span></div>
+            <pre><code>set.seed(123)
+
+N &lt;- 200
+n &lt;- 10
+
+ids &lt;- 1:N
+
+muestra_ids &lt;- sample(
+  ids,
+  size = n,
+  replace = FALSE
+)
+
+muestra_ids</code></pre>
           </article>
+
           <article>
-            <span>Nivel 4</span>
-            <h3>Interpretación</h3>
-            <p>Explica qué significa que \(SE(\bar y)=4.2\) en términos de precisión muestral.</p>
+            <div class="code-title"><strong>Python</strong><span>Selección reproducible</span></div>
+            <pre><code>import numpy as np
+
+rng = np.random.default_rng(123)
+
+N = 200
+n = 10
+
+ids = np.arange(1, N + 1)
+
+muestra_ids = rng.choice(
+    ids,
+    size=n,
+    replace=False
+)
+
+print(muestra_ids)</code></pre>
           </article>
+        </div>
+
+        <div class="workflow-box">
+          <h3>Después del sorteo</h3>
+          <ol>
+            <li>Guarda los IDs seleccionados.</li>
+            <li>Filtra la base original usando esos IDs.</li>
+            <li>Comprueba que obtuviste exactamente \(n\) filas.</li>
+            <li>Analiza únicamente las observaciones seleccionadas.</li>
+            <li>Conserva la semilla para poder reproducir el sorteo.</li>
+          </ol>
         </div>
       </section>
 
       <section class="panel references" id="referencias">
-        <div class="section-heading"><span>6</span><h2>Fuentes y referencias</h2></div>
-        <p>Las fórmulas y procedimientos de esta página se contrastaron con textos clásicos de muestreo:</p>
+        <div class="section-heading"><span>7</span><h2>Fuentes de las fórmulas</h2></div>
+        <p>Las fórmulas y el procedimiento estadístico usados en este ejercicio se apoyan en textos clásicos de muestreo:</p>
         <ol>
-          <li><strong>Cochran, W. G. (1977).</strong> <em>Sampling Techniques</em>, 3rd ed. Capítulo 2: Simple Random Sampling.</li>
-          <li><strong>Lohr, S. L.</strong> <em>Sampling: Design and Analysis</em>, 3rd ed. Capítulo 2: Simple Probability Samples.</li>
-          <li><strong>Särndal, C.-E., Swensson, B. & Wretman, J. (1992).</strong> <em>Model Assisted Survey Sampling</em>.</li>
+          <li><strong>Cochran, W. G. (1977).</strong> <em>Sampling Techniques</em>, 3rd ed., capítulo 2: Simple Random Sampling.</li>
+          <li><strong>Lohr, S. L.</strong> <em>Sampling: Design and Analysis</em>, capítulo sobre simple random sampling / simple probability samples.</li>
           <li><strong>Kish, L. (1965).</strong> <em>Survey Sampling</em>.</li>
+          <li><strong>Särndal, C.-E., Swensson, B. & Wretman, J. (1992).</strong> <em>Model Assisted Survey Sampling</em>.</li>
         </ol>
-        <p class="source-note">Los datos numéricos de los ejercicios son simulados para enseñanza; las fórmulas no son inventadas ni ajustadas al ejemplo.</p>
       </section>
 
       <section class="panel" id="practica">
-        <div class="section-heading"><span>7</span><h2>Finalizar práctica</h2></div>
+        <div class="section-heading"><span>8</span><h2>Finalizar ejercicio</h2></div>
+
         <div class="completion-box">
           <div>
-            <strong>¿Terminaste estos ejercicios?</strong>
+            <strong>¿Terminaste este caso práctico?</strong>
             <span>Tu progreso se guarda en este navegador.</span>
           </div>
           <button class="complete-topic-btn" type="button" data-complete-topic>Marcar tema como completado</button>
@@ -329,28 +449,34 @@
 
       <section class="side-card">
         <h2>Tu progreso en la ruta</h2>
-        <div class="progress-head"><strong>Inferencia Estadística</strong><span data-progress-percent>0%</span></div>
+        <div class="progress-head">
+          <strong>Muestreo probabilístico</strong>
+          <span data-progress-percent>0%</span>
+        </div>
         <div class="progress-bar"><span data-progress-bar style="width:0%"></span></div>
         <small><span data-progress-count>0</span> de <span data-progress-total>12</span> temas completados</small>
       </section>
 
       <section class="side-card">
-        <h2>Temas de MAS</h2>
+        <h2>Pasos de este ejercicio</h2>
         <nav class="toc">
-          <a href="#ejemplo1"><b>1</b> Media, varianza y error estándar</a>
-          <a href="#ejemplo2"><b>2</b> Proporción</a>
-          <a href="#ejemplo3"><b>3</b> Intervalo de confianza</a>
-          <a href="#ejemplo4"><b>4</b> Selección de la muestra</a>
-          <a href="#propuestos"><b>5</b> Ejercicios propuestos</a>
-          <a href="#referencias"><b>6</b> Referencias</a>
+          <a href="#paso1"><b>1</b> Planteamiento del ejemplo</a>
+          <a href="#paso2"><b>2</b> Selección de la muestra</a>
+          <a href="#paso3"><b>3</b> Extracción de datos</a>
+          <a href="#paso4"><b>4</b> Cálculos paso a paso</a>
+          <a href="#paso5"><b>5</b> Resultados e interpretación</a>
+          <a href="#paso6"><b>6</b> Código en R y Python</a>
+          <a href="#referencias"><b>7</b> Fuentes</a>
         </nav>
       </section>
 
       <section class="side-card related">
-        <h2>Navegación del tema</h2>
-        <a href="../">← Volver a Muestreo aleatorio simple</a>
-        <strong>Siguiente tema</strong>
-        <a href="../../sistematico/">Muestreo sistemático →</a>
+        <h2>Ejercicios relacionados</h2>
+        <a class="current" href="./">Caso 1: selección y análisis</a>
+        <a href="#">Caso 2: media y varianza</a>
+        <a href="#">Caso 3: estimación de una proporción</a>
+        <a href="#">Caso 4: intervalo de confianza</a>
+        <a href="#">Caso 5: encuesta de hogares</a>
       </section>
 
       <div class="ea-ad-slot ea-ad-slot--rectangle"
@@ -358,15 +484,23 @@
            data-ad-format="rectangle"
            aria-hidden="true"></div>
 
-      <section class="side-card references-mini">
-        <h2>Referencias principales</h2>
-        <p>Cochran — <em>Sampling Techniques</em>, cap. 2.</p>
-        <p>Lohr — <em>Sampling: Design and Analysis</em>, cap. 2.</p>
-        <p>Särndal, Swensson & Wretman — <em>Model Assisted Survey Sampling</em>.</p>
-        <p>Kish — <em>Survey Sampling</em>.</p>
+      <section class="side-card related">
+        <h2>Recursos del tema</h2>
+        <a href="../">← Volver a Muestreo aleatorio simple</a>
+        <a href="#referencias">Ver referencias</a>
+      </section>
+
+      <section class="side-card next-card">
+        <h2>Siguiente tema</h2>
+        <a href="../../sistematico/">
+          <strong>Muestreo sistemático</strong>
+          <span>Concepto, procedimiento, ventajas y ejemplos.</span>
+        </a>
+        <a class="btn btn-primary" href="../../sistematico/">Ir al siguiente tema →</a>
       </section>
 
     </aside>
+
   </div>
 </main>
 
