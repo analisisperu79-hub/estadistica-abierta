@@ -3168,3 +3168,366 @@ window.trueFalseBank = [
     "concept": "(A∪B)ᶜ=Aᶜ∩Bᶜ."
   }
 ];
+
+window.flashcardBank = [
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Población y muestra",
+    "level": "Básico",
+    "prompt": "¿Cuál es la diferencia entre población y muestra?",
+    "answer": "La población es el conjunto total de interés; la muestra es el subconjunto que se observa.",
+    "detail": "La muestra se utiliza para describir o inferir características de la población."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Unidad de análisis",
+    "level": "Básico",
+    "prompt": "¿Qué es la unidad de análisis?",
+    "answer": "Es el elemento individual sobre el que se registra información.",
+    "detail": "Puede ser una persona, hogar, empresa, objeto, evento u otra unidad definida por el estudio."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Tipos de variables",
+    "level": "Básico",
+    "prompt": "¿Cuándo una variable cuantitativa es discreta?",
+    "answer": "Cuando toma valores separados y contables, normalmente producto de un conteo.",
+    "detail": "Ejemplos: número de hijos, llamadas recibidas o defectos observados."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Tipos de variables",
+    "level": "Básico",
+    "prompt": "¿Cuándo una variable cuantitativa es continua?",
+    "answer": "Cuando puede tomar valores dentro de un intervalo con la precisión permitida por la medición.",
+    "detail": "Ejemplos: peso, tiempo, longitud o temperatura."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Escalas de medición",
+    "level": "Intermedio",
+    "prompt": "¿Qué distingue una escala ordinal de una nominal?",
+    "answer": "La escala ordinal tiene un orden natural entre categorías; la nominal no.",
+    "detail": "El orden ordinal no implica que las distancias entre categorías sean iguales."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Frecuencias",
+    "level": "Básico",
+    "prompt": "¿Cómo se calcula la frecuencia relativa?",
+    "answer": "Frecuencia relativa = frecuencia absoluta / número total de observaciones.",
+    "detail": "Expresada como proporción, todas las frecuencias relativas suman 1."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Gráficos",
+    "level": "Básico",
+    "prompt": "¿Para qué sirve principalmente un histograma?",
+    "answer": "Para visualizar la forma de la distribución de una variable cuantitativa.",
+    "detail": "Permite apreciar concentración, asimetría, posibles modas y dispersión."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Media",
+    "level": "Básico",
+    "prompt": "¿Qué representa la media aritmética?",
+    "answer": "El promedio obtenido al sumar todos los valores y dividir entre el número de observaciones.",
+    "detail": "Es sensible a valores extremos."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Mediana",
+    "level": "Básico",
+    "prompt": "¿Qué representa la mediana?",
+    "answer": "El valor central de los datos ordenados.",
+    "detail": "Aproximadamente la mitad de las observaciones queda por debajo y la otra mitad por encima."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Moda",
+    "level": "Básico",
+    "prompt": "¿Qué es la moda?",
+    "answer": "El valor o categoría que aparece con mayor frecuencia.",
+    "detail": "Puede existir una moda, varias modas o ninguna moda claramente definida."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Cuartiles",
+    "level": "Intermedio",
+    "prompt": "¿Qué porcentaje aproximado de observaciones queda por debajo de Q3?",
+    "answer": "75 %.",
+    "detail": "Q1 ≈ P25, Q2 ≈ P50 y Q3 ≈ P75."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "IQR",
+    "level": "Intermedio",
+    "prompt": "¿Cómo se calcula el rango intercuartílico?",
+    "answer": "IQR = Q3 − Q1.",
+    "detail": "Mide la amplitud del 50 % central de los datos."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Rango",
+    "level": "Básico",
+    "prompt": "¿Cómo se calcula el rango?",
+    "answer": "Máximo − mínimo.",
+    "detail": "Es sencillo, pero depende únicamente de los dos valores extremos."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Varianza",
+    "level": "Intermedio",
+    "prompt": "¿Qué mide la varianza?",
+    "answer": "La dispersión promedio cuadrática de los valores respecto de la media.",
+    "detail": "Queda expresada en unidades al cuadrado."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Desviación estándar",
+    "level": "Intermedio",
+    "prompt": "¿Cómo se relacionan varianza y desviación estándar?",
+    "answer": "La desviación estándar es la raíz cuadrada de la varianza.",
+    "detail": "Por eso vuelve a expresarse en las unidades originales de la variable."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Coeficiente de variación",
+    "level": "Avanzado",
+    "prompt": "¿Para qué se usa el coeficiente de variación?",
+    "answer": "Para comparar dispersión relativa respecto de la media.",
+    "detail": "Debe interpretarse con cautela cuando la media es cero o muy cercana a cero."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Asimetría",
+    "level": "Intermedio",
+    "prompt": "¿Qué indica una asimetría positiva?",
+    "answer": "Una distribución con cola más larga hacia la derecha.",
+    "detail": "Valores altos extremos suelen empujar la media hacia la derecha."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Curtosis",
+    "level": "Avanzado",
+    "prompt": "¿Cuál es el exceso de curtosis teórico de una distribución normal?",
+    "answer": "0.",
+    "detail": "La curtosis convencional de la normal es 3; el exceso resta 3."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Boxplot",
+    "level": "Intermedio",
+    "prompt": "¿Qué elementos resume un boxplot?",
+    "answer": "Cuartiles, mediana, dispersión central, bigotes y posibles valores atípicos.",
+    "detail": "Es especialmente útil para comparar distribuciones entre grupos."
+  },
+  {
+    "module": "descriptiva",
+    "moduleName": "Estadística descriptiva",
+    "topic": "Valores atípicos",
+    "level": "Avanzado",
+    "prompt": "¿Un valor señalado por la regla de 1.5 IQR debe eliminarse automáticamente?",
+    "answer": "No.",
+    "detail": "Debe investigarse primero: puede ser un error, pero también una observación legítima e informativa."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Experimento aleatorio",
+    "level": "Básico",
+    "prompt": "¿Qué caracteriza a un experimento aleatorio?",
+    "answer": "Se conocen los resultados posibles, pero no cuál ocurrirá antes de realizarlo.",
+    "detail": "Ejemplos típicos son lanzar un dado o seleccionar aleatoriamente un elemento."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Espacio muestral",
+    "level": "Básico",
+    "prompt": "¿Qué es el espacio muestral?",
+    "answer": "El conjunto de todos los resultados posibles de un experimento aleatorio.",
+    "detail": "Suele representarse con S o Ω."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Eventos",
+    "level": "Básico",
+    "prompt": "¿Qué es un evento?",
+    "answer": "Un subconjunto del espacio muestral.",
+    "detail": "Puede contener uno, varios o todos los resultados posibles."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Unión",
+    "level": "Básico",
+    "prompt": "¿Qué significa A∪B?",
+    "answer": "Que ocurre A, B o ambos.",
+    "detail": "La unión representa 'al menos uno de los dos eventos'."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Intersección",
+    "level": "Básico",
+    "prompt": "¿Qué significa A∩B?",
+    "answer": "Que ocurren A y B simultáneamente.",
+    "detail": "Contiene los resultados comunes a ambos eventos."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Complemento",
+    "level": "Básico",
+    "prompt": "¿Cómo se calcula la probabilidad del complemento de A?",
+    "answer": "P(Aᶜ) = 1 − P(A).",
+    "detail": "A y su complemento cubren todo el espacio muestral sin superponerse."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Regla de adición",
+    "level": "Intermedio",
+    "prompt": "¿Cuál es la regla general de adición para dos eventos?",
+    "answer": "P(A∪B) = P(A) + P(B) − P(A∩B).",
+    "detail": "Se resta la intersección porque fue contada dos veces."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Probabilidad condicional",
+    "level": "Intermedio",
+    "prompt": "¿Cómo se define P(A|B)?",
+    "answer": "P(A|B) = P(A∩B) / P(B), siempre que P(B) > 0.",
+    "detail": "La condición B redefine el universo de referencia."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Regla de multiplicación",
+    "level": "Intermedio",
+    "prompt": "¿Cuál es una forma de la regla de multiplicación?",
+    "answer": "P(A∩B) = P(A)·P(B|A).",
+    "detail": "También puede escribirse P(B)·P(A|B)."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Independencia",
+    "level": "Intermedio",
+    "prompt": "¿Cuál es una condición para que A y B sean independientes?",
+    "answer": "P(A∩B) = P(A)P(B).",
+    "detail": "Equivalentemente, si P(B)>0, P(A|B)=P(A)."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Mutua exclusión",
+    "level": "Intermedio",
+    "prompt": "¿Qué significa que A y B sean mutuamente excluyentes?",
+    "answer": "Que no pueden ocurrir simultáneamente.",
+    "detail": "Por tanto, A∩B es vacío y P(A∩B)=0."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Árboles",
+    "level": "Intermedio",
+    "prompt": "¿Cuál es la regla básica para trabajar con un árbol de probabilidad?",
+    "answer": "Multiplicar a lo largo de una ruta y sumar rutas alternativas pertinentes.",
+    "detail": "Las ramas permiten representar probabilidades condicionales sucesivas."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Tablas de contingencia",
+    "level": "Intermedio",
+    "prompt": "¿Qué información muestra una celda interior de una tabla de contingencia?",
+    "answer": "Una frecuencia o probabilidad conjunta de dos categorías.",
+    "detail": "Los totales de fila y columna son frecuencias marginales."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Probabilidad total",
+    "level": "Avanzado",
+    "prompt": "¿Para qué sirve el teorema de la probabilidad total?",
+    "answer": "Para calcular la probabilidad global de un evento combinando varias rutas o grupos.",
+    "detail": "P(B)=ΣP(B|Aᵢ)P(Aᵢ) cuando los Aᵢ forman una partición."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Bayes",
+    "level": "Avanzado",
+    "prompt": "¿Para qué sirve el teorema de Bayes?",
+    "answer": "Para actualizar o invertir probabilidades condicionales usando evidencia.",
+    "detail": "Relaciona P(A|B) con P(B|A), la probabilidad previa de A y la evidencia B."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Conteo",
+    "level": "Intermedio",
+    "prompt": "¿Cuándo se usan combinaciones?",
+    "answer": "Cuando se seleccionan elementos y el orden no importa.",
+    "detail": "Por ejemplo, formar un comité de 3 personas entre 10."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Conteo",
+    "level": "Intermedio",
+    "prompt": "¿Cuándo importa una permutación o selección ordenada?",
+    "answer": "Cuando cambiar el orden o la posición produce un resultado diferente.",
+    "detail": "Por ejemplo, asignar presidente, vicepresidente y secretario."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Sin reemplazo",
+    "level": "Intermedio",
+    "prompt": "¿Por qué las extracciones sin reemplazo suelen ser dependientes?",
+    "answer": "Porque cada extracción modifica la composición disponible para las siguientes.",
+    "detail": "Las probabilidades posteriores deben actualizarse según lo ocurrido antes."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "De Morgan",
+    "level": "Avanzado",
+    "prompt": "¿Cuál es el complemento de A∪B según De Morgan?",
+    "answer": "Aᶜ∩Bᶜ.",
+    "detail": "No ocurre A ni B significa que ocurren ambos complementos."
+  },
+  {
+    "module": "probabilidad",
+    "moduleName": "Probabilidad",
+    "topic": "Bayes y diagnóstico",
+    "level": "Avanzado",
+    "prompt": "¿Por qué una alta sensibilidad no equivale a una alta probabilidad de tener la condición después de un positivo?",
+    "answer": "Porque la probabilidad posterior también depende de la prevalencia y de los falsos positivos.",
+    "detail": "La tasa base es fundamental en la interpretación de pruebas diagnósticas."
+  }
+];
