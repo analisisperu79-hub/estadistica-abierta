@@ -1879,7 +1879,848 @@ window.questionBank = [
             "0.216 multiplica rutas alternativas, lo que no corresponde en este caso."
         ],
         "concept": "En un árbol, se multiplican probabilidades a lo largo de una ruta y se suman rutas alternativas mutuamente excluyentes."
-    }
+    },
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Variables aleatorias",
+  "level": "Básico",
+  "question": "¿Qué describe una variable aleatoria?",
+  "options": [
+    "Una función que asigna números a resultados de un experimento aleatorio",
+    "Una probabilidad que siempre vale entre 0 y 1",
+    "Un evento que necesariamente ocurre",
+    "Una muestra tomada al azar"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto. Una variable aleatoria asigna un valor numérico a cada resultado relevante del experimento.",
+    "Eso describe una probabilidad, no una variable aleatoria.",
+    "Una variable aleatoria no es un evento ni implica certeza.",
+    "Una muestra aleatoria es otro concepto."
+  ],
+  "concept": "Una variable aleatoria transforma resultados del experimento en valores numéricos."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Variables aleatorias",
+  "level": "Básico",
+  "question": "¿Cuál de las siguientes variables es discreta?",
+  "options": [
+    "Tiempo de espera en minutos con precisión continua",
+    "Temperatura corporal",
+    "Número de mensajes recibidos en una hora",
+    "Peso de una pieza"
+  ],
+  "correct": 2,
+  "explanations": [
+    "El tiempo se modela normalmente como continuo.",
+    "La temperatura se modela normalmente como continua.",
+    "Correcto. Un conteo toma valores enteros separados.",
+    "El peso se modela normalmente como continuo."
+  ],
+  "concept": "Los conteos son ejemplos típicos de variables discretas."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Distribuciones discretas",
+  "level": "Básico",
+  "question": "Si p(x) es una función de masa de probabilidad discreta, ¿qué debe cumplirse?",
+  "options": [
+    "La suma de todas las probabilidades debe ser 1",
+    "Cada p(x) debe ser mayor que 1",
+    "La suma de los valores x debe ser 1",
+    "Solo puede haber dos valores posibles"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto. Además, cada probabilidad debe ser no negativa.",
+    "Una probabilidad no puede superar 1.",
+    "Se suman probabilidades, no los valores de la variable.",
+    "Eso solo ocurre en casos especiales como Bernoulli."
+  ],
+  "concept": "En una PMF discreta: p(x) >= 0 y la suma de p(x) es 1."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Distribuciones discretas",
+  "level": "Intermedio",
+  "question": "Para una variable discreta, ¿qué significa F(3)=0.72?",
+  "options": [
+    "P(X=3)=0.72",
+    "P(X menor o igual que 3)=0.72",
+    "P(X mayor que 3)=0.72",
+    "La media es 3"
+  ],
+  "correct": 1,
+  "explanations": [
+    "F es acumulada, no puntual.",
+    "Correcto. F(x)=P(X menor o igual que x).",
+    "La cola derecha sería 1-F(3), con cuidado del punto según el evento.",
+    "F(3) no representa la media."
+  ],
+  "concept": "La CDF acumula probabilidad hasta x."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Esperanza y varianza",
+  "level": "Básico",
+  "question": "¿Qué representa E(X)?",
+  "options": [
+    "La probabilidad de que X ocurra",
+    "El promedio teórico de largo plazo de la variable",
+    "El máximo posible de X",
+    "La desviación estándar"
+  ],
+  "correct": 1,
+  "explanations": [
+    "E(X) no es una probabilidad en general.",
+    "Correcto. Es el centro teórico de la distribución en sentido de promedio ponderado.",
+    "No representa el máximo.",
+    "La desviación estándar mide dispersión."
+  ],
+  "concept": "La esperanza es un promedio ponderado por probabilidades."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Esperanza y varianza",
+  "level": "Intermedio",
+  "question": "Si Var(X)=9, ¿cuál es la desviación estándar?",
+  "options": [
+    "81",
+    "9",
+    "3",
+    "1/3"
+  ],
+  "correct": 2,
+  "explanations": [
+    "81 sería 9 al cuadrado.",
+    "9 es la varianza dada.",
+    "Correcto. La desviación estándar es la raíz cuadrada de la varianza.",
+    "No corresponde."
+  ],
+  "concept": "Desviación estándar = raíz cuadrada de la varianza."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Bernoulli",
+  "level": "Básico",
+  "question": "Una variable Bernoulli puede tomar los valores:",
+  "options": [
+    "0 y 1",
+    "0, 1, 2, ...",
+    "Cualquier valor real",
+    "Solo 1"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto. 1 suele codificar éxito y 0 fracaso.",
+    "Ese soporte corresponde a conteos como Poisson.",
+    "Bernoulli es discreta.",
+    "También puede tomar 0."
+  ],
+  "concept": "Bernoulli modela un solo ensayo con dos resultados."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Bernoulli",
+  "level": "Intermedio",
+  "question": "Si X sigue Bernoulli(p), ¿cuál es E(X)?",
+  "options": [
+    "1-p",
+    "p",
+    "p al cuadrado",
+    "p(1-p)"
+  ],
+  "correct": 1,
+  "explanations": [
+    "1-p es la probabilidad del resultado 0.",
+    "Correcto. E(X)=p.",
+    "No corresponde.",
+    "p(1-p) es la varianza."
+  ],
+  "concept": "Para Bernoulli: E(X)=p y Var(X)=p(1-p)."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Binomial",
+  "level": "Básico",
+  "question": "¿Cuál es la variable típica de una distribución binomial?",
+  "options": [
+    "Número de éxitos en n ensayos",
+    "Número de intentos hasta el primer éxito",
+    "Número de eventos por unidad de tiempo sin n fijo",
+    "Tiempo continuo entre eventos"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto.",
+    "Eso es geométrica bajo la convención usual.",
+    "Eso sugiere Poisson.",
+    "Eso sería una variable continua."
+  ],
+  "concept": "Binomial cuenta éxitos en un número fijo de ensayos."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Binomial",
+  "level": "Intermedio",
+  "question": "En una binomial con n=10 y p=0.3, ¿cuál es E(X)?",
+  "options": [
+    "0.3",
+    "3",
+    "7",
+    "10"
+  ],
+  "correct": 1,
+  "explanations": [
+    "0.3 es p.",
+    "Correcto. E(X)=np=3.",
+    "7 no corresponde.",
+    "10 es n."
+  ],
+  "concept": "La media binomial es np."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Binomial",
+  "level": "Intermedio",
+  "question": "¿Qué condición NO pertenece al modelo binomial clásico?",
+  "options": [
+    "Número fijo de ensayos",
+    "Probabilidad p constante",
+    "Independencia entre ensayos",
+    "Detenerse cuando aparece el primer éxito"
+  ],
+  "correct": 3,
+  "explanations": [
+    "Sí es condición binomial.",
+    "Sí es condición binomial.",
+    "Sí es condición binomial.",
+    "Correcto. Detenerse en el primer éxito corresponde a una geométrica."
+  ],
+  "concept": "Binomial: n fijo, dos resultados, p constante e independencia."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Binomial",
+  "level": "Avanzado",
+  "question": "Si X sigue Binomial(5,0.4), ¿cuál expresión calcula P(X=3)?",
+  "options": [
+    "C(5,3)(0.4)^3(0.6)^2",
+    "(0.4)^3",
+    "C(5,3)(0.4)^2(0.6)^3",
+    "1-(0.6)^5"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto.",
+    "Falta considerar posiciones y fracasos.",
+    "Los exponentes están intercambiados.",
+    "Eso calcula al menos un éxito."
+  ],
+  "concept": "P(X=x)=C(n,x)p^x(1-p)^(n-x)."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Geométrica",
+  "level": "Básico",
+  "question": "¿Qué pregunta responde una distribución geométrica con X = número de ensayos hasta el primer éxito?",
+  "options": [
+    "¿Cuántos éxitos hay en n ensayos?",
+    "¿En qué ensayo aparece el primer éxito?",
+    "¿Cuántos eventos ocurren en una hora?",
+    "¿Cuál es una medición continua?"
+  ],
+  "correct": 1,
+  "explanations": [
+    "Eso es binomial.",
+    "Correcto.",
+    "Eso sugiere Poisson.",
+    "No corresponde a geométrica."
+  ],
+  "concept": "Geométrica modela la espera discreta hasta el primer éxito."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Geométrica",
+  "level": "Intermedio",
+  "question": "Si p=0.25, ¿cuál es E(X) para el número de ensayos hasta el primer éxito?",
+  "options": [
+    "0.25",
+    "4",
+    "3",
+    "0.75"
+  ],
+  "correct": 1,
+  "explanations": [
+    "Eso es p.",
+    "Correcto. E(X)=1/p=4.",
+    "No corresponde.",
+    "Eso es 1-p."
+  ],
+  "concept": "Para esta convención geométrica, E(X)=1/p."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Geométrica",
+  "level": "Intermedio",
+  "question": "La propiedad de falta de memoria de la geométrica significa que:",
+  "options": [
+    "La probabilidad de éxito aumenta después de muchos fracasos",
+    "Los ensayos previos no cambian la distribución del tiempo adicional hasta el éxito",
+    "La variable no tiene esperanza",
+    "La probabilidad p cambia en cada intento"
+  ],
+  "correct": 1,
+  "explanations": [
+    "Eso es una falacia si los ensayos son independientes y p constante.",
+    "Correcto.",
+    "Sí tiene esperanza para p>0.",
+    "La geométrica clásica supone p constante."
+  ],
+  "concept": "La geométrica es una distribución discreta sin memoria."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Poisson",
+  "level": "Básico",
+  "question": "¿Qué parámetro caracteriza a una Poisson?",
+  "options": [
+    "p",
+    "n",
+    "lambda",
+    "mu y sigma"
+  ],
+  "correct": 2,
+  "explanations": [
+    "p aparece en Bernoulli/binomial/geométrica.",
+    "n aparece en binomial.",
+    "Correcto. lambda es el número esperado de eventos en el intervalo.",
+    "Esos parámetros caracterizan la normal."
+  ],
+  "concept": "Poisson usa el parámetro lambda."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Poisson",
+  "level": "Intermedio",
+  "question": "Si ocurren en promedio 6 eventos por hora, ¿cuál es lambda para 30 minutos, suponiendo tasa constante?",
+  "options": [
+    "6",
+    "12",
+    "3",
+    "0.5"
+  ],
+  "correct": 2,
+  "explanations": [
+    "Eso usaría la tasa de una hora sin ajustar.",
+    "No corresponde.",
+    "Correcto. La exposición es la mitad: lambda=3.",
+    "0.5 es la fracción de hora, no el conteo esperado."
+  ],
+  "concept": "Lambda debe ajustarse a la exposición del problema."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Poisson",
+  "level": "Intermedio",
+  "question": "Para X Poisson(lambda), ¿qué relación teórica existe entre media y varianza?",
+  "options": [
+    "Ambas son lambda",
+    "La media es lambda y la varianza es lambda al cuadrado",
+    "La media es 1/lambda",
+    "No existe relación"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto.",
+    "La varianza Poisson también es lambda.",
+    "Eso no corresponde.",
+    "Sí existe una propiedad característica."
+  ],
+  "concept": "En Poisson ideal: E(X)=Var(X)=lambda."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Poisson",
+  "level": "Avanzado",
+  "question": "Si X sigue Poisson(2), ¿cuál es P(X=0)?",
+  "options": [
+    "e^(-2)",
+    "2e^(-2)",
+    "1-e^(-2)",
+    "0"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto. P(0)=e^(-lambda).",
+    "Ese sería P(X=1).",
+    "Eso es P(X al menos 1).",
+    "Cero eventos sí puede ocurrir."
+  ],
+  "concept": "P(X=0)=e^(-lambda)."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Variables continuas",
+  "level": "Básico",
+  "question": "Si X es continua, ¿cuánto vale P(X=5)?",
+  "options": [
+    "0",
+    "f(5)",
+    "1",
+    "Depende de la media"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto. Un punto tiene área cero.",
+    "La densidad no es una probabilidad puntual.",
+    "No puede ser 1 para un punto.",
+    "La propiedad no depende de la media."
+  ],
+  "concept": "En variables continuas, P(X=x)=0."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Variables continuas",
+  "level": "Intermedio",
+  "question": "En una variable continua, P(a menor que X menor que b) se obtiene como:",
+  "options": [
+    "Una suma de valores de x",
+    "El área bajo la densidad entre a y b",
+    "La altura f(a)",
+    "La varianza"
+  ],
+  "correct": 1,
+  "explanations": [
+    "En continuo se integra.",
+    "Correcto.",
+    "Una altura no es el área del intervalo.",
+    "La varianza no calcula esa probabilidad."
+  ],
+  "concept": "Las probabilidades continuas son áreas bajo la densidad."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Densidad",
+  "level": "Intermedio",
+  "question": "¿Puede una función de densidad tomar valores mayores que 1?",
+  "options": [
+    "No, nunca",
+    "Sí, si el área total sigue siendo 1 y la densidad es no negativa",
+    "Solo en distribuciones discretas",
+    "Solo si la media es cero"
+  ],
+  "correct": 1,
+  "explanations": [
+    "Una densidad no es una probabilidad puntual.",
+    "Correcto.",
+    "Las PMF discretas sí están acotadas por 1, pero aquí hablamos de densidad.",
+    "La media no determina esa condición."
+  ],
+  "concept": "La densidad puede superar 1; el área total debe ser 1."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Uniforme continua",
+  "level": "Básico",
+  "question": "Si X sigue U(a,b), ¿cuál es su densidad dentro del intervalo?",
+  "options": [
+    "1/(b-a)",
+    "1/b",
+    "b-a",
+    "a+b"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto.",
+    "Ignora el extremo inferior.",
+    "Es la longitud del intervalo, no la altura.",
+    "No corresponde."
+  ],
+  "concept": "La densidad uniforme es constante e igual a 1/(b-a)."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Uniforme continua",
+  "level": "Intermedio",
+  "question": "Si X sigue U(0,10), ¿cuánto vale P(2 menor o igual que X menor o igual que 6)?",
+  "options": [
+    "0.2",
+    "0.4",
+    "0.6",
+    "0.8"
+  ],
+  "correct": 1,
+  "explanations": [
+    "La longitud favorable no es 2.",
+    "Correcto. (6-2)/(10-0)=0.4.",
+    "No corresponde.",
+    "No corresponde."
+  ],
+  "concept": "En una uniforme, probabilidad = longitud favorable / longitud total."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Uniforme continua",
+  "level": "Intermedio",
+  "question": "Si X sigue U(4,12), ¿cuál es E(X)?",
+  "options": [
+    "4",
+    "8",
+    "12",
+    "16"
+  ],
+  "correct": 1,
+  "explanations": [
+    "Es el límite inferior.",
+    "Correcto. (4+12)/2=8.",
+    "Es el límite superior.",
+    "No corresponde."
+  ],
+  "concept": "La media uniforme es el punto medio (a+b)/2."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Normal",
+  "level": "Básico",
+  "question": "En la notación N(mu,sigma^2), el segundo parámetro representa:",
+  "options": [
+    "La desviación estándar",
+    "La varianza",
+    "La mediana únicamente",
+    "Una probabilidad"
+  ],
+  "correct": 1,
+  "explanations": [
+    "La desviación estándar es sigma.",
+    "Correcto.",
+    "Media y mediana coinciden en la normal, pero no es el segundo parámetro.",
+    "No es una probabilidad."
+  ],
+  "concept": "La normal suele escribirse N(mu,sigma^2)."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Normal",
+  "level": "Básico",
+  "question": "¿Cuál propiedad describe a una distribución normal?",
+  "options": [
+    "Es simétrica alrededor de mu",
+    "Solo toma enteros",
+    "Su densidad es constante",
+    "Tiene soporte entre 0 y 1"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto.",
+    "La normal es continua.",
+    "Eso describe la uniforme continua.",
+    "La normal tiene soporte real."
+  ],
+  "concept": "La normal es continua y simétrica alrededor de su media."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Normal",
+  "level": "Intermedio",
+  "question": "Aproximadamente, ¿qué porcentaje de una normal cae dentro de mu más o menos 2 sigma?",
+  "options": [
+    "50%",
+    "68%",
+    "95%",
+    "99.99%"
+  ],
+  "correct": 2,
+  "explanations": [
+    "No corresponde.",
+    "68% es aproximadamente dentro de 1 sigma.",
+    "Correcto. Regla empírica.",
+    "Es demasiado alto para 2 sigma."
+  ],
+  "concept": "Regla 68-95-99.7."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Puntuaciones Z",
+  "level": "Básico",
+  "question": "¿Cuál es la fórmula de la puntuación Z?",
+  "options": [
+    "(X-mu)/sigma",
+    "(X-mu)/sigma^2",
+    "X/sigma",
+    "mu/X"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto.",
+    "Se divide entre la desviación estándar, no la varianza.",
+    "Falta centrar restando la media.",
+    "No corresponde."
+  ],
+  "concept": "Z=(X-mu)/sigma."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Puntuaciones Z",
+  "level": "Intermedio",
+  "question": "Si Z=-1.5, ¿qué significa?",
+  "options": [
+    "X está 1.5 desviaciones estándar por encima de la media",
+    "X está 1.5 desviaciones estándar por debajo de la media",
+    "La probabilidad es -1.5",
+    "La varianza es 1.5"
+  ],
+  "correct": 1,
+  "explanations": [
+    "El signo sería positivo.",
+    "Correcto.",
+    "Z no es una probabilidad.",
+    "Z no es la varianza."
+  ],
+  "concept": "El signo de Z indica dirección respecto a la media."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Puntuaciones Z",
+  "level": "Intermedio",
+  "question": "Si mu=50, sigma=5 y X=60, ¿cuál es Z?",
+  "options": [
+    "1",
+    "2",
+    "5",
+    "10"
+  ],
+  "correct": 1,
+  "explanations": [
+    "(60-50)/5 no es 1.",
+    "Correcto. Z=2.",
+    "Ese es sigma.",
+    "Esa es la diferencia antes de dividir."
+  ],
+  "concept": "Estandarizar compara la distancia con la desviación estándar."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Puntuaciones Z",
+  "level": "Intermedio",
+  "question": "Si mu=100, sigma=20 y Z=-1, ¿cuál es X?",
+  "options": [
+    "80",
+    "100",
+    "120",
+    "-20"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto. X=mu+Z sigma=80.",
+    "Eso corresponde a Z=0.",
+    "Eso corresponde a Z=1.",
+    "No corresponde."
+  ],
+  "concept": "Para volver a la escala original: X=mu+Z sigma."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Probabilidades normales",
+  "level": "Intermedio",
+  "question": "Si Phi(z) representa la CDF normal estándar, ¿qué significa Phi(1.2)?",
+  "options": [
+    "P(Z=1.2)",
+    "P(Z menor o igual que 1.2)",
+    "P(Z mayor que 1.2)",
+    "La densidad exactamente en 1.2"
+  ],
+  "correct": 1,
+  "explanations": [
+    "En continuo una probabilidad puntual es 0.",
+    "Correcto.",
+    "La cola derecha es 1-Phi(1.2).",
+    "La CDF no es la densidad."
+  ],
+  "concept": "Phi(z) acumula área a la izquierda."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Probabilidades normales",
+  "level": "Intermedio",
+  "question": "¿Cómo calculas P(Z mayor que z) usando Phi(z)?",
+  "options": [
+    "Phi(z)",
+    "1-Phi(z)",
+    "Phi(-z)+Phi(z)",
+    "z-Phi(z)"
+  ],
+  "correct": 1,
+  "explanations": [
+    "Eso es área a la izquierda.",
+    "Correcto.",
+    "No corresponde.",
+    "No corresponde."
+  ],
+  "concept": "La cola derecha es el complemento de la CDF."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Probabilidades normales",
+  "level": "Avanzado",
+  "question": "¿Cómo se calcula P(a menor o igual que X menor o igual que b) para una normal?",
+  "options": [
+    "Sumando las dos CDF",
+    "Restando F(b)-F(a)",
+    "Multiplicando los dos z",
+    "Usando solo la media"
+  ],
+  "correct": 1,
+  "explanations": [
+    "No se suman acumuladas.",
+    "Correcto. En continuo, F(b)-F(a).",
+    "Z no se multiplica.",
+    "La media por sí sola no basta."
+  ],
+  "concept": "Una probabilidad de intervalo es diferencia de acumuladas."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Cuantiles",
+  "level": "Intermedio",
+  "question": "¿Qué es el percentil 90 de una distribución continua?",
+  "options": [
+    "El 90% del valor máximo",
+    "El valor que deja 90% de probabilidad a su izquierda",
+    "Una probabilidad igual a 90",
+    "La media multiplicada por 0.9"
+  ],
+  "correct": 1,
+  "explanations": [
+    "No depende de un máximo en general.",
+    "Correcto.",
+    "Las probabilidades se expresan entre 0 y 1.",
+    "No se obtiene así."
+  ],
+  "concept": "Un cuantil invierte la función acumulada."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Comparación de modelos",
+  "level": "Avanzado",
+  "question": "Se realizan intentos independientes con p constante hasta obtener el primer éxito. ¿Qué modelo es más natural?",
+  "options": [
+    "Binomial",
+    "Geométrica",
+    "Poisson",
+    "Normal"
+  ],
+  "correct": 1,
+  "explanations": [
+    "La binomial fija n y cuenta éxitos.",
+    "Correcto.",
+    "Poisson cuenta eventos en exposición.",
+    "Normal es continua."
+  ],
+  "concept": "La definición de X determina el modelo."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Comparación de modelos",
+  "level": "Avanzado",
+  "question": "Se conoce un promedio estable de 5 llamadas por minuto y se cuenta cuántas llegan en un minuto. ¿Qué modelo evaluarías primero?",
+  "options": [
+    "Bernoulli",
+    "Geométrica",
+    "Poisson",
+    "Uniforme"
+  ],
+  "correct": 2,
+  "explanations": [
+    "No es un solo ensayo binario.",
+    "No se espera al primer éxito.",
+    "Correcto.",
+    "No es una medición con densidad constante."
+  ],
+  "concept": "Poisson es natural para conteos por intervalo con tasa estable."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Comparación de modelos",
+  "level": "Avanzado",
+  "question": "Una variable continua tiene densidad constante entre 10 y 20. ¿Qué modelo corresponde?",
+  "options": [
+    "Uniforme continua",
+    "Normal",
+    "Binomial",
+    "Poisson"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto.",
+    "La normal no tiene densidad constante.",
+    "Es discreta.",
+    "Es discreta."
+  ],
+  "concept": "Uniforme continua: densidad constante en un intervalo."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Integración",
+  "level": "Avanzado",
+  "question": "Antes de elegir una fórmula de probabilidad, ¿qué conviene hacer primero?",
+  "options": [
+    "Definir qué representa X y reconocer la estructura del problema",
+    "Buscar la fórmula más larga",
+    "Redondear todos los datos",
+    "Suponer normalidad"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto. La definición de la variable y el modelo vienen antes del cálculo.",
+    "La complejidad de la fórmula no garantiza pertinencia.",
+    "Redondear antes puede empeorar precisión.",
+    "No debe suponerse normalidad sin fundamento."
+  ],
+  "concept": "Modelo primero, cálculo después."
+}
+
 
   ];
 
@@ -2763,7 +3604,448 @@ window.toolBank = [
       "Media y desviación estándar pertenecen a estadística descriptiva."
     ],
     "concept": "Muchos problemas de clasificación probabilística combinan probabilidad total y Bayes."
-  }
+  },
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Selección de distribución",
+  "level": "Básico",
+  "question": "Quieres modelar si una sola pieza resulta defectuosa o no. ¿Qué usarías?",
+  "context": "Solo observas una pieza y codificas defecto=1, no defecto=0.",
+  "options": [
+    "Bernoulli",
+    "Binomial",
+    "Poisson",
+    "Normal"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto. Es un solo ensayo binario.",
+    "Binomial cuenta éxitos en varios ensayos.",
+    "Poisson cuenta eventos por exposición.",
+    "Normal es continua."
+  ],
+  "concept": "Un ensayo binario individual se modela con Bernoulli."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Selección de distribución",
+  "level": "Básico",
+  "question": "Quieres contar cuántas de 30 piezas independientes son defectuosas con la misma probabilidad p. ¿Qué usarías?",
+  "context": "Hay un número fijo de ensayos y se cuentan éxitos.",
+  "options": [
+    "Geométrica",
+    "Binomial",
+    "Uniforme",
+    "Poisson"
+  ],
+  "correct": 1,
+  "explanations": [
+    "Geométrica espera al primer éxito.",
+    "Correcto.",
+    "Uniforme es continua.",
+    "Poisson no parte de n ensayos Bernoulli fijos."
+  ],
+  "concept": "Binomial cuenta éxitos en n ensayos."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Selección de distribución",
+  "level": "Básico",
+  "question": "Repites ensayos independientes hasta obtener el primer éxito. ¿Qué usarías?",
+  "context": "La variable es el número de intentos hasta el primer éxito.",
+  "options": [
+    "Bernoulli",
+    "Geométrica",
+    "Normal",
+    "Poisson"
+  ],
+  "correct": 1,
+  "explanations": [
+    "Bernoulli es un ensayo.",
+    "Correcto.",
+    "Normal es continua.",
+    "Poisson cuenta eventos por intervalo."
+  ],
+  "concept": "Geométrica modela la espera discreta al primer éxito."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Selección de distribución",
+  "level": "Básico",
+  "question": "Cuentas cuántas llamadas llegan en 10 minutos con una tasa promedio estable. ¿Qué usarías?",
+  "context": "No hay un número fijo de ensayos; se cuentan ocurrencias durante una exposición.",
+  "options": [
+    "Poisson",
+    "Binomial",
+    "Uniforme",
+    "Bernoulli"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto.",
+    "Binomial requiere n fijo de ensayos.",
+    "Uniforme es continua.",
+    "Bernoulli es un solo ensayo."
+  ],
+  "concept": "Poisson es natural para conteos por intervalo."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Selección de distribución",
+  "level": "Básico",
+  "question": "Una medición puede caer en cualquier valor entre 5 y 15 y la densidad es constante. ¿Qué usarías?",
+  "context": "Todos los subintervalos de igual longitud deben tener igual probabilidad.",
+  "options": [
+    "Normal",
+    "Uniforme continua",
+    "Binomial",
+    "Geométrica"
+  ],
+  "correct": 1,
+  "explanations": [
+    "La normal no tiene densidad constante.",
+    "Correcto.",
+    "Binomial es discreta.",
+    "Geométrica es discreta."
+  ],
+  "concept": "Uniforme continua representa densidad constante en [a,b]."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Selección de distribución",
+  "level": "Básico",
+  "question": "Una variable continua es simétrica alrededor de una media y el problema especifica un modelo N(mu,sigma^2). ¿Qué usarías?",
+  "context": "El modelo ya está indicado explícitamente.",
+  "options": [
+    "Poisson",
+    "Normal",
+    "Binomial",
+    "Uniforme"
+  ],
+  "correct": 1,
+  "explanations": [
+    "Poisson es discreta.",
+    "Correcto.",
+    "Binomial es discreta.",
+    "Uniforme tiene densidad constante."
+  ],
+  "concept": "La normal se caracteriza por mu y sigma."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Probabilidades",
+  "level": "Intermedio",
+  "question": "En una binomial quieres calcular la probabilidad de al menos un éxito. ¿Qué estrategia suele ser más rápida?",
+  "context": "El evento complementario es que no ocurra ningún éxito.",
+  "options": [
+    "Sumar todos los casos desde 1 hasta n",
+    "Usar 1-P(X=0)",
+    "Usar una normal sin verificar",
+    "Dividir p entre n"
+  ],
+  "correct": 1,
+  "explanations": [
+    "Es posible, pero suele ser menos eficiente.",
+    "Correcto.",
+    "Una aproximación requiere condiciones y no es necesaria aquí.",
+    "No corresponde."
+  ],
+  "concept": "Al menos uno suele resolverse por complemento."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Poisson",
+  "level": "Intermedio",
+  "question": "La tasa es 8 eventos por hora, pero la pregunta es por 15 minutos. ¿Qué debes hacer antes de calcular?",
+  "context": "La unidad del parámetro debe coincidir con la exposición del evento.",
+  "options": [
+    "Usar lambda=8 sin cambios",
+    "Convertir a lambda=2",
+    "Usar p=0.125",
+    "Cambiar a binomial"
+  ],
+  "correct": 1,
+  "explanations": [
+    "Mezclaría unidades.",
+    "Correcto.",
+    "Lambda no es una probabilidad.",
+    "No hay razón para cambiar de modelo."
+  ],
+  "concept": "Ajusta lambda proporcionalmente al intervalo."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Continuas",
+  "level": "Intermedio",
+  "question": "Quieres calcular P(3 menor que X menor que 7) para una variable continua con densidad conocida. ¿Qué usarías?",
+  "context": "La probabilidad de un intervalo continuo es un área.",
+  "options": [
+    "Sumar f(3)+f(7)",
+    "Integrar la densidad entre 3 y 7",
+    "Usar P(X=5)",
+    "Calcular solo la media"
+  ],
+  "correct": 1,
+  "explanations": [
+    "Las alturas no se suman así.",
+    "Correcto.",
+    "Un punto tiene probabilidad cero.",
+    "La media no da el área pedida."
+  ],
+  "concept": "En continuo, probabilidad = área bajo la densidad."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Normal",
+  "level": "Intermedio",
+  "question": "Tienes X~N(100,15^2) y quieres comparar X=130 con la media en unidades de desviación estándar. ¿Qué usarías?",
+  "context": "Quieres una posición relativa sin unidades.",
+  "options": [
+    "Puntuación Z",
+    "Varianza muestral",
+    "Poisson",
+    "IQR"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto.",
+    "No responde la posición estandarizada individual.",
+    "No corresponde.",
+    "No es la herramienta indicada."
+  ],
+  "concept": "Z=(X-mu)/sigma."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Normal",
+  "level": "Intermedio",
+  "question": "Conoces z y quieres volver a la escala original X. ¿Qué fórmula usarías?",
+  "context": "Necesitas desestandarizar.",
+  "options": [
+    "X=mu+z sigma",
+    "X=(z-mu)/sigma",
+    "X=z/sigma",
+    "X=mu-z/sigma"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto.",
+    "Esa expresión no invierte la estandarización.",
+    "No incorpora la media.",
+    "No corresponde."
+  ],
+  "concept": "Desestandarizar: X=mu+z sigma."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Normal",
+  "level": "Intermedio",
+  "question": "Quieres P(X mayor que x) para una normal y tu software te da F(x)=P(X menor o igual que x). ¿Qué haces?",
+  "context": "La CDF entrega el área izquierda.",
+  "options": [
+    "Usar F(x)",
+    "Usar 1-F(x)",
+    "Multiplicar F(x) por x",
+    "Restar la media"
+  ],
+  "correct": 1,
+  "explanations": [
+    "Eso sería el área izquierda.",
+    "Correcto.",
+    "No corresponde.",
+    "No corresponde."
+  ],
+  "concept": "Cola derecha = 1 - CDF."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Normal",
+  "level": "Intermedio",
+  "question": "Quieres la probabilidad entre dos valores a y b de una normal. ¿Qué operación corresponde?",
+  "context": "Dispones de la CDF.",
+  "options": [
+    "F(b)-F(a)",
+    "F(a)+F(b)",
+    "F(a)F(b)",
+    "1-F(a)-F(b)"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto.",
+    "Sumar acumuladas no da el intervalo.",
+    "No corresponde.",
+    "No corresponde."
+  ],
+  "concept": "Entre dos límites: diferencia de acumuladas."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Cuantiles",
+  "level": "Intermedio",
+  "question": "Quieres el valor que deja 95% de una normal a su izquierda. ¿Qué herramienta conceptual necesitas?",
+  "context": "La probabilidad es conocida y el valor es desconocido.",
+  "options": [
+    "CDF directa solamente",
+    "Función inversa o cuantil",
+    "Varianza",
+    "Regla de adición"
+  ],
+  "correct": 1,
+  "explanations": [
+    "La CDF directa parte de un valor x.",
+    "Correcto.",
+    "No resuelve el problema inverso.",
+    "No corresponde."
+  ],
+  "concept": "Los cuantiles invierten la CDF."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Diagnóstico de modelo",
+  "level": "Avanzado",
+  "question": "Un conteo tiene varianza observada muy superior a su media. ¿Qué revisarías antes de asumir una Poisson simple?",
+  "context": "La Poisson ideal tiene media y varianza iguales.",
+  "options": [
+    "Sobredispersión y posible heterogeneidad o dependencia",
+    "Solo la mediana",
+    "Si la variable es positiva",
+    "Si n es menor que 30"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto.",
+    "La mediana no diagnostica este problema.",
+    "Ser positiva no basta.",
+    "n<30 no es el criterio relevante."
+  ],
+  "concept": "La sobredispersión puede indicar que Poisson simple es demasiado restrictiva."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Diagnóstico de modelo",
+  "level": "Avanzado",
+  "question": "Una variable es simétrica, pero no sabes su distribución. ¿Qué conclusión es válida?",
+  "context": "La simetría por sí sola no identifica una familia.",
+  "options": [
+    "Es necesariamente normal",
+    "Podría ser normal, pero hace falta más evidencia",
+    "Es necesariamente uniforme",
+    "Es necesariamente Poisson"
+  ],
+  "correct": 1,
+  "explanations": [
+    "No necesariamente.",
+    "Correcto.",
+    "Uniforme es una posibilidad entre otras, no una conclusión necesaria.",
+    "Poisson es discreta y generalmente asimétrica para lambda pequeño."
+  ],
+  "concept": "Simetría no equivale a normalidad."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Comparación de modelos",
+  "level": "Avanzado",
+  "question": "Tienes n fijo, p constante e independencia, pero el interés es el número de éxitos. ¿Qué modelo usarías antes que Poisson?",
+  "context": "El mecanismo exacto es una secuencia Bernoulli con n fijo.",
+  "options": [
+    "Binomial",
+    "Poisson siempre",
+    "Geométrica",
+    "Normal siempre"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto.",
+    "Poisson podría ser aproximación bajo condiciones, no el modelo original.",
+    "Geométrica pregunta por espera al primer éxito.",
+    "Normal podría aproximar bajo condiciones, no es el modelo original."
+  ],
+  "concept": "Usa primero el modelo exacto cuando está disponible."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Comparación de modelos",
+  "level": "Avanzado",
+  "question": "Una binomial tiene n grande y p pequeño. Si buscas una aproximación simple, ¿qué relación usarías para Poisson?",
+  "context": "La media binomial se conserva en la aproximación.",
+  "options": [
+    "lambda=np",
+    "lambda=n/p",
+    "lambda=p/n",
+    "lambda=n(1-p)"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto.",
+    "No corresponde.",
+    "No corresponde.",
+    "No corresponde."
+  ],
+  "concept": "Aproximación Poisson a binomial: lambda=np."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Interpretación",
+  "level": "Avanzado",
+  "question": "Dos resultados en escalas distintas tienen Z=2 y Z=1. ¿Cuál está relativamente más por encima de su media?",
+  "context": "Z mide distancia en desviaciones estándar.",
+  "options": [
+    "El de Z=2",
+    "El de Z=1",
+    "No se pueden comparar Z",
+    "El de mayor valor original necesariamente"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto.",
+    "Está menos lejos de su media.",
+    "Justamente Z permite comparar posiciones relativas.",
+    "El valor original depende de las unidades."
+  ],
+  "concept": "Z hace comparables posiciones relativas."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Selección de método",
+  "level": "Avanzado",
+  "question": "Antes de usar cualquier distribución, ¿cuál es el primer paso más útil?",
+  "context": "El mismo contexto puede producir modelos distintos según cómo se defina X.",
+  "options": [
+    "Definir la variable aleatoria y el evento de interés",
+    "Buscar una tabla Z",
+    "Aplicar siempre normal",
+    "Redondear los datos"
+  ],
+  "correct": 0,
+  "explanations": [
+    "Correcto.",
+    "Solo sirve para problemas normales específicos.",
+    "No debe asumirse normalidad.",
+    "No es el primer paso."
+  ],
+  "concept": "Definir X y el evento evita usar el modelo equivocado."
+}
+
 ];
 
 window.trueFalseBank = [
@@ -3166,368 +4448,246 @@ window.trueFalseBank = [
     "answer": true,
     "explanation": "Correcto. Para que no ocurra A ni B, deben ocurrir simultáneamente ambos complementos.",
     "concept": "(A∪B)ᶜ=Aᶜ∩Bᶜ."
-  }
-];
+  },
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Variables aleatorias",
+  "level": "Básico",
+  "statement": "Una variable aleatoria asigna valores numéricos a resultados de un experimento aleatorio.",
+  "answer": true,
+  "explanation": "Correcto. Esa es la idea central de variable aleatoria.",
+  "concept": "Variable aleatoria = función numérica sobre resultados."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Variables aleatorias",
+  "level": "Básico",
+  "statement": "Toda variable aleatoria es necesariamente continua.",
+  "answer": false,
+  "explanation": "Falso. Puede ser discreta o continua.",
+  "concept": "Las variables aleatorias pueden clasificarse en discretas y continuas."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Distribuciones discretas",
+  "level": "Básico",
+  "statement": "En una distribución discreta, las probabilidades de todos los valores posibles deben sumar 1.",
+  "answer": true,
+  "explanation": "Correcto.",
+  "concept": "Una PMF válida tiene probabilidades no negativas que suman 1."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Distribuciones discretas",
+  "level": "Intermedio",
+  "statement": "La función acumulada F(x) de una variable discreta es P(X=x).",
+  "answer": false,
+  "explanation": "Falso. F(x)=P(X menor o igual que x).",
+  "concept": "No confundas probabilidad puntual con acumulada."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Esperanza y varianza",
+  "level": "Básico",
+  "statement": "La esperanza de una variable aleatoria es un promedio teórico ponderado por probabilidades.",
+  "answer": true,
+  "explanation": "Correcto.",
+  "concept": "La esperanza resume el centro teórico de la distribución."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Esperanza y varianza",
+  "level": "Intermedio",
+  "statement": "La desviación estándar es la varianza elevada al cuadrado.",
+  "answer": false,
+  "explanation": "Falso. La desviación estándar es la raíz cuadrada de la varianza.",
+  "concept": "sigma = raíz de Var(X)."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Bernoulli",
+  "level": "Básico",
+  "statement": "Una Bernoulli toma valores 0 y 1.",
+  "answer": true,
+  "explanation": "Correcto.",
+  "concept": "Bernoulli modela un solo ensayo binario."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Bernoulli",
+  "level": "Intermedio",
+  "statement": "Para una Bernoulli(p), la varianza es p(1-p).",
+  "answer": true,
+  "explanation": "Correcto.",
+  "concept": "Var(X)=p(1-p)."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Binomial",
+  "level": "Básico",
+  "statement": "Una binomial cuenta éxitos en un número fijo de ensayos.",
+  "answer": true,
+  "explanation": "Correcto.",
+  "concept": "Binomial: n fijo, dos resultados, p constante e independencia."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Binomial",
+  "level": "Intermedio",
+  "statement": "En una binomial clásica, la probabilidad de éxito puede cambiar libremente de un ensayo a otro.",
+  "answer": false,
+  "explanation": "Falso. El modelo clásico supone p constante.",
+  "concept": "La constancia de p es un supuesto binomial."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Geométrica",
+  "level": "Básico",
+  "statement": "La distribución geométrica puede modelar el número de ensayos hasta el primer éxito.",
+  "answer": true,
+  "explanation": "Correcto.",
+  "concept": "Geométrica = espera discreta hasta el primer éxito."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Geométrica",
+  "level": "Intermedio",
+  "statement": "En una geométrica con ensayos independientes y p constante, varios fracasos previos hacen que el próximo éxito sea más probable.",
+  "answer": false,
+  "explanation": "Falso. La probabilidad del próximo éxito sigue siendo p.",
+  "concept": "La geométrica tiene propiedad de falta de memoria."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Poisson",
+  "level": "Básico",
+  "statement": "Una Poisson es apropiada para modelar conteos de eventos en una exposición bajo ciertos supuestos.",
+  "answer": true,
+  "explanation": "Correcto.",
+  "concept": "Poisson modela conteos por tiempo, área, longitud u otra exposición."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Poisson",
+  "level": "Intermedio",
+  "statement": "En una Poisson ideal, la media y la varianza son iguales a lambda.",
+  "answer": true,
+  "explanation": "Correcto.",
+  "concept": "E(X)=Var(X)=lambda."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Poisson",
+  "level": "Intermedio",
+  "statement": "Si la tasa es por hora y la pregunta es por 15 minutos, se puede usar el mismo lambda sin ajustar.",
+  "answer": false,
+  "explanation": "Falso. Lambda debe corresponder al intervalo analizado.",
+  "concept": "Ajusta lambda a la exposición."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Variables continuas",
+  "level": "Básico",
+  "statement": "Para una variable continua, P(X=x)=0 para cualquier punto individual x.",
+  "answer": true,
+  "explanation": "Correcto.",
+  "concept": "Las probabilidades continuas se asignan a intervalos."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Variables continuas",
+  "level": "Intermedio",
+  "statement": "En una variable continua, incluir o excluir un extremo individual cambia siempre la probabilidad.",
+  "answer": false,
+  "explanation": "Falso. Los puntos individuales tienen probabilidad cero.",
+  "concept": "En continuo, menor que y menor o igual que dan la misma probabilidad en un punto."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Densidad",
+  "level": "Intermedio",
+  "statement": "Una densidad puede ser mayor que 1 si sigue siendo no negativa y el área total es 1.",
+  "answer": true,
+  "explanation": "Correcto.",
+  "concept": "La altura de una densidad no es una probabilidad puntual."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Uniforme continua",
+  "level": "Básico",
+  "statement": "En una uniforme continua, intervalos de igual longitud dentro del soporte tienen igual probabilidad.",
+  "answer": true,
+  "explanation": "Correcto.",
+  "concept": "La densidad uniforme es constante."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Uniforme continua",
+  "level": "Intermedio",
+  "statement": "En una uniforme U(a,b), la media es (a+b)/2.",
+  "answer": true,
+  "explanation": "Correcto.",
+  "concept": "La esperanza coincide con el punto medio."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Normal",
+  "level": "Básico",
+  "statement": "La distribución normal es simétrica alrededor de su media.",
+  "answer": true,
+  "explanation": "Correcto.",
+  "concept": "La normal ideal es simétrica."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Normal",
+  "level": "Intermedio",
+  "statement": "Toda distribución simétrica es necesariamente normal.",
+  "answer": false,
+  "explanation": "Falso. Existen muchas distribuciones simétricas no normales.",
+  "concept": "Simetría no demuestra normalidad."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Puntuaciones Z",
+  "level": "Básico",
+  "statement": "Una puntuación Z negativa indica que el valor está por debajo de la media.",
+  "answer": true,
+  "explanation": "Correcto.",
+  "concept": "El signo de Z indica dirección respecto de la media."
+},
+{
+  "module": "variables",
+  "moduleName": "Variables aleatorias y distribuciones",
+  "topic": "Puntuaciones Z",
+  "level": "Intermedio",
+  "statement": "La puntuación Z se obtiene dividiendo X-mu entre la varianza sigma al cuadrado.",
+  "answer": false,
+  "explanation": "Falso. Se divide entre la desviación estándar sigma.",
+  "concept": "Z=(X-mu)/sigma."
+}
 
-window.flashcardBank = [
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Población y muestra",
-    "level": "Básico",
-    "prompt": "¿Cuál es la diferencia entre población y muestra?",
-    "answer": "La población es el conjunto total de interés; la muestra es el subconjunto que se observa.",
-    "detail": "La muestra se utiliza para describir o inferir características de la población."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Unidad de análisis",
-    "level": "Básico",
-    "prompt": "¿Qué es la unidad de análisis?",
-    "answer": "Es el elemento individual sobre el que se registra información.",
-    "detail": "Puede ser una persona, hogar, empresa, objeto, evento u otra unidad definida por el estudio."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Tipos de variables",
-    "level": "Básico",
-    "prompt": "¿Cuándo una variable cuantitativa es discreta?",
-    "answer": "Cuando toma valores separados y contables, normalmente producto de un conteo.",
-    "detail": "Ejemplos: número de hijos, llamadas recibidas o defectos observados."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Tipos de variables",
-    "level": "Básico",
-    "prompt": "¿Cuándo una variable cuantitativa es continua?",
-    "answer": "Cuando puede tomar valores dentro de un intervalo con la precisión permitida por la medición.",
-    "detail": "Ejemplos: peso, tiempo, longitud o temperatura."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Escalas de medición",
-    "level": "Intermedio",
-    "prompt": "¿Qué distingue una escala ordinal de una nominal?",
-    "answer": "La escala ordinal tiene un orden natural entre categorías; la nominal no.",
-    "detail": "El orden ordinal no implica que las distancias entre categorías sean iguales."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Frecuencias",
-    "level": "Básico",
-    "prompt": "¿Cómo se calcula la frecuencia relativa?",
-    "answer": "Frecuencia relativa = frecuencia absoluta / número total de observaciones.",
-    "detail": "Expresada como proporción, todas las frecuencias relativas suman 1."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Gráficos",
-    "level": "Básico",
-    "prompt": "¿Para qué sirve principalmente un histograma?",
-    "answer": "Para visualizar la forma de la distribución de una variable cuantitativa.",
-    "detail": "Permite apreciar concentración, asimetría, posibles modas y dispersión."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Media",
-    "level": "Básico",
-    "prompt": "¿Qué representa la media aritmética?",
-    "answer": "El promedio obtenido al sumar todos los valores y dividir entre el número de observaciones.",
-    "detail": "Es sensible a valores extremos."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Mediana",
-    "level": "Básico",
-    "prompt": "¿Qué representa la mediana?",
-    "answer": "El valor central de los datos ordenados.",
-    "detail": "Aproximadamente la mitad de las observaciones queda por debajo y la otra mitad por encima."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Moda",
-    "level": "Básico",
-    "prompt": "¿Qué es la moda?",
-    "answer": "El valor o categoría que aparece con mayor frecuencia.",
-    "detail": "Puede existir una moda, varias modas o ninguna moda claramente definida."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Cuartiles",
-    "level": "Intermedio",
-    "prompt": "¿Qué porcentaje aproximado de observaciones queda por debajo de Q3?",
-    "answer": "75 %.",
-    "detail": "Q1 ≈ P25, Q2 ≈ P50 y Q3 ≈ P75."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "IQR",
-    "level": "Intermedio",
-    "prompt": "¿Cómo se calcula el rango intercuartílico?",
-    "answer": "IQR = Q3 − Q1.",
-    "detail": "Mide la amplitud del 50 % central de los datos."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Rango",
-    "level": "Básico",
-    "prompt": "¿Cómo se calcula el rango?",
-    "answer": "Máximo − mínimo.",
-    "detail": "Es sencillo, pero depende únicamente de los dos valores extremos."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Varianza",
-    "level": "Intermedio",
-    "prompt": "¿Qué mide la varianza?",
-    "answer": "La dispersión promedio cuadrática de los valores respecto de la media.",
-    "detail": "Queda expresada en unidades al cuadrado."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Desviación estándar",
-    "level": "Intermedio",
-    "prompt": "¿Cómo se relacionan varianza y desviación estándar?",
-    "answer": "La desviación estándar es la raíz cuadrada de la varianza.",
-    "detail": "Por eso vuelve a expresarse en las unidades originales de la variable."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Coeficiente de variación",
-    "level": "Avanzado",
-    "prompt": "¿Para qué se usa el coeficiente de variación?",
-    "answer": "Para comparar dispersión relativa respecto de la media.",
-    "detail": "Debe interpretarse con cautela cuando la media es cero o muy cercana a cero."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Asimetría",
-    "level": "Intermedio",
-    "prompt": "¿Qué indica una asimetría positiva?",
-    "answer": "Una distribución con cola más larga hacia la derecha.",
-    "detail": "Valores altos extremos suelen empujar la media hacia la derecha."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Curtosis",
-    "level": "Avanzado",
-    "prompt": "¿Cuál es el exceso de curtosis teórico de una distribución normal?",
-    "answer": "0.",
-    "detail": "La curtosis convencional de la normal es 3; el exceso resta 3."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Boxplot",
-    "level": "Intermedio",
-    "prompt": "¿Qué elementos resume un boxplot?",
-    "answer": "Cuartiles, mediana, dispersión central, bigotes y posibles valores atípicos.",
-    "detail": "Es especialmente útil para comparar distribuciones entre grupos."
-  },
-  {
-    "module": "descriptiva",
-    "moduleName": "Estadística descriptiva",
-    "topic": "Valores atípicos",
-    "level": "Avanzado",
-    "prompt": "¿Un valor señalado por la regla de 1.5 IQR debe eliminarse automáticamente?",
-    "answer": "No.",
-    "detail": "Debe investigarse primero: puede ser un error, pero también una observación legítima e informativa."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Experimento aleatorio",
-    "level": "Básico",
-    "prompt": "¿Qué caracteriza a un experimento aleatorio?",
-    "answer": "Se conocen los resultados posibles, pero no cuál ocurrirá antes de realizarlo.",
-    "detail": "Ejemplos típicos son lanzar un dado o seleccionar aleatoriamente un elemento."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Espacio muestral",
-    "level": "Básico",
-    "prompt": "¿Qué es el espacio muestral?",
-    "answer": "El conjunto de todos los resultados posibles de un experimento aleatorio.",
-    "detail": "Suele representarse con S o Ω."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Eventos",
-    "level": "Básico",
-    "prompt": "¿Qué es un evento?",
-    "answer": "Un subconjunto del espacio muestral.",
-    "detail": "Puede contener uno, varios o todos los resultados posibles."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Unión",
-    "level": "Básico",
-    "prompt": "¿Qué significa A∪B?",
-    "answer": "Que ocurre A, B o ambos.",
-    "detail": "La unión representa 'al menos uno de los dos eventos'."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Intersección",
-    "level": "Básico",
-    "prompt": "¿Qué significa A∩B?",
-    "answer": "Que ocurren A y B simultáneamente.",
-    "detail": "Contiene los resultados comunes a ambos eventos."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Complemento",
-    "level": "Básico",
-    "prompt": "¿Cómo se calcula la probabilidad del complemento de A?",
-    "answer": "P(Aᶜ) = 1 − P(A).",
-    "detail": "A y su complemento cubren todo el espacio muestral sin superponerse."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Regla de adición",
-    "level": "Intermedio",
-    "prompt": "¿Cuál es la regla general de adición para dos eventos?",
-    "answer": "P(A∪B) = P(A) + P(B) − P(A∩B).",
-    "detail": "Se resta la intersección porque fue contada dos veces."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Probabilidad condicional",
-    "level": "Intermedio",
-    "prompt": "¿Cómo se define P(A|B)?",
-    "answer": "P(A|B) = P(A∩B) / P(B), siempre que P(B) > 0.",
-    "detail": "La condición B redefine el universo de referencia."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Regla de multiplicación",
-    "level": "Intermedio",
-    "prompt": "¿Cuál es una forma de la regla de multiplicación?",
-    "answer": "P(A∩B) = P(A)·P(B|A).",
-    "detail": "También puede escribirse P(B)·P(A|B)."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Independencia",
-    "level": "Intermedio",
-    "prompt": "¿Cuál es una condición para que A y B sean independientes?",
-    "answer": "P(A∩B) = P(A)P(B).",
-    "detail": "Equivalentemente, si P(B)>0, P(A|B)=P(A)."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Mutua exclusión",
-    "level": "Intermedio",
-    "prompt": "¿Qué significa que A y B sean mutuamente excluyentes?",
-    "answer": "Que no pueden ocurrir simultáneamente.",
-    "detail": "Por tanto, A∩B es vacío y P(A∩B)=0."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Árboles",
-    "level": "Intermedio",
-    "prompt": "¿Cuál es la regla básica para trabajar con un árbol de probabilidad?",
-    "answer": "Multiplicar a lo largo de una ruta y sumar rutas alternativas pertinentes.",
-    "detail": "Las ramas permiten representar probabilidades condicionales sucesivas."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Tablas de contingencia",
-    "level": "Intermedio",
-    "prompt": "¿Qué información muestra una celda interior de una tabla de contingencia?",
-    "answer": "Una frecuencia o probabilidad conjunta de dos categorías.",
-    "detail": "Los totales de fila y columna son frecuencias marginales."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Probabilidad total",
-    "level": "Avanzado",
-    "prompt": "¿Para qué sirve el teorema de la probabilidad total?",
-    "answer": "Para calcular la probabilidad global de un evento combinando varias rutas o grupos.",
-    "detail": "P(B)=ΣP(B|Aᵢ)P(Aᵢ) cuando los Aᵢ forman una partición."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Bayes",
-    "level": "Avanzado",
-    "prompt": "¿Para qué sirve el teorema de Bayes?",
-    "answer": "Para actualizar o invertir probabilidades condicionales usando evidencia.",
-    "detail": "Relaciona P(A|B) con P(B|A), la probabilidad previa de A y la evidencia B."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Conteo",
-    "level": "Intermedio",
-    "prompt": "¿Cuándo se usan combinaciones?",
-    "answer": "Cuando se seleccionan elementos y el orden no importa.",
-    "detail": "Por ejemplo, formar un comité de 3 personas entre 10."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Conteo",
-    "level": "Intermedio",
-    "prompt": "¿Cuándo importa una permutación o selección ordenada?",
-    "answer": "Cuando cambiar el orden o la posición produce un resultado diferente.",
-    "detail": "Por ejemplo, asignar presidente, vicepresidente y secretario."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Sin reemplazo",
-    "level": "Intermedio",
-    "prompt": "¿Por qué las extracciones sin reemplazo suelen ser dependientes?",
-    "answer": "Porque cada extracción modifica la composición disponible para las siguientes.",
-    "detail": "Las probabilidades posteriores deben actualizarse según lo ocurrido antes."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "De Morgan",
-    "level": "Avanzado",
-    "prompt": "¿Cuál es el complemento de A∪B según De Morgan?",
-    "answer": "Aᶜ∩Bᶜ.",
-    "detail": "No ocurre A ni B significa que ocurren ambos complementos."
-  },
-  {
-    "module": "probabilidad",
-    "moduleName": "Probabilidad",
-    "topic": "Bayes y diagnóstico",
-    "level": "Avanzado",
-    "prompt": "¿Por qué una alta sensibilidad no equivale a una alta probabilidad de tener la condición después de un positivo?",
-    "answer": "Porque la probabilidad posterior también depende de la prevalencia y de los falsos positivos.",
-    "detail": "La tasa base es fundamental en la interpretación de pruebas diagnósticas."
-  }
 ];
